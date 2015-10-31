@@ -9,6 +9,8 @@ PhoneBattery is also **available for free** on the [App Store](https://itunes.ap
 
 I had the initial idea for this app on the plane from WWDC back to Germany, polished it at home and here it is now.
 
+Unfortunately, I don't have enough time to keep this app updated. So, if you are interested help me updating PhoneBattery!
+
 ### System Requirements
 
 * Requires iOS 9 or newer
