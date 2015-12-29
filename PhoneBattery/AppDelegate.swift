@@ -7,16 +7,34 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
     var window: UIWindow?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
+        
+        // [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert, categories: .None))
+        
+        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if defaults.boolForKey("hasRunBefore") == false {
+            
+            // Array with Integers for the notfication settings
+            let activeNotifications = [0, 1]
+            defaults.setObject(activeNotifications, forKey: "activeNotfications")
+            
+            defaults.setBool(true, forKey: "hasRunBefore")
+            defaults.synchronize()
+            
+        }
         
         let navController = UINavigationController(rootViewController: AboutViewController(style: UITableViewStyle.Grouped))
         self.window?.rootViewController = navController
@@ -24,6 +42,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         return true
+    }
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        // TODO: Doesn't work
+        let batteryObject = BatteryInformation().concludedInformation()
+        let level = String(batteryObject.batteryLevel) + "%"
+        
+        
+        let localNotification = UILocalNotification()
+        localNotification.fireDate = NSDate()
+        localNotification.timeZone = NSTimeZone.defaultTimeZone()
+        localNotification.alertBody = String(format: "Your battery level is at %@%%.", level)
+        localNotification.alertAction = "OK"
+        application.scheduleLocalNotification(localNotification)
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -47,7 +81,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
 }
 

@@ -40,4 +40,11 @@ class BatteryInformation: NSObject {
         }
     }
     
+    func concludedInformation() -> BatteryObject {
+        
+        let batteryObject = BatteryObject(level: self.currentBatteryLevel(), state: self.currentBatteryState().rawValue)
+        return batteryObject
+        
+    }
+    
 }

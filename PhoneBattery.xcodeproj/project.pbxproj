@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		1F2F152B1B67BF970073F61A /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F152A1B67BF970073F61A /* UIImage+Additions.swift */; };
 		1F3148E31B39A9E100AD0038 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3148E21B39A9E100AD0038 /* Launch Screen.xib */; };
+		1F4EDF041BDB0D9900C4E6F6 /* BatteryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57C9AD1BDA4D42002B11BC /* BatteryObject.swift */; };
+		1F57C9AE1BDA4D42002B11BC /* BatteryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57C9AD1BDA4D42002B11BC /* BatteryObject.swift */; };
+		1F57C9B01BDA50F7002B11BC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57C9AF1BDA50F7002B11BC /* ExtensionDelegate.swift */; };
 		1F7E14931BADD2C0005F9A84 /* PhoneBattery WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1FC720FF1B3440E800F9DDEA /* PhoneBattery WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1F7E14961BADD2C0005F9A84 /* PhoneBattery WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1FC7210B1B3440E800F9DDEA /* PhoneBattery WatchKit App.app */; };
-		1F7E149A1BADD36C005F9A84 /* BatteryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E14991BADD36C005F9A84 /* BatteryInformation.swift */; settings = {ASSET_TAGS = (); }; };
+		1F7E149A1BADD36C005F9A84 /* BatteryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E14991BADD36C005F9A84 /* BatteryInformation.swift */; };
 		1F83509D1B3977FA00E65388 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F8350A01B3977FA00E65388 /* Localizable.strings */; };
 		1F83509E1B3977FA00E65388 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F8350A01B3977FA00E65388 /* Localizable.strings */; };
-		1F984E2A1BB094710068E6C5 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F984E291BB094710068E6C5 /* AboutViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1F984E2A1BB094710068E6C5 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F984E291BB094710068E6C5 /* AboutViewController.m */; };
 		1FA8EC371B370439001BEE4B /* CreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8EC361B370439001BEE4B /* CreatorTableViewCell.swift */; };
 		1FC720E11B3440E100F9DDEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC720E01B3440E100F9DDEA /* AppDelegate.swift */; };
 		1FC720E31B3440E100F9DDEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC720E21B3440E100F9DDEA /* Images.xcassets */; };
@@ -24,8 +27,9 @@
 		1FC721081B3440E800F9DDEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC721071B3440E800F9DDEA /* Images.xcassets */; };
 		1FC721141B3440E800F9DDEA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC721121B3440E800F9DDEA /* Interface.storyboard */; };
 		1FC721161B3440E800F9DDEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC721151B3440E800F9DDEA /* Images.xcassets */; };
-		1FD645641BC1A31600E76A65 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD645631BC1A31600E76A65 /* ComplicationController.swift */; settings = {ASSET_TAGS = (); }; };
+		1FD645641BC1A31600E76A65 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD645631BC1A31600E76A65 /* ComplicationController.swift */; };
 		1FEBBA941B68FFB400111B23 /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEBBA931B68FFB400111B23 /* DeviceInformation.swift */; };
+		1FF06E601BDD3B0300CE23A6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF06E5F1BDD3B0300CE23A6 /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,8 @@
 		1F2228B01B563A4600383648 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1F2F152A1B67BF970073F61A /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		1F3148E21B39A9E100AD0038 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "../Launch Screen.xib"; sourceTree = "<group>"; };
+		1F57C9AD1BDA4D42002B11BC /* BatteryObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryObject.swift; sourceTree = "<group>"; };
+		1F57C9AF1BDA50F7002B11BC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		1F7C35951B4AD53200777EA6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Interface.strings; sourceTree = "<group>"; };
 		1F7C35961B4AD53200777EA6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F7C35971B4ADFAB00777EA6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Interface.strings; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		1FC721151B3440E800F9DDEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FD645631BC1A31600E76A65 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		1FEBBA931B68FFB400111B23 /* DeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
+		1FF06E5F1BDD3B0300CE23A6 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		1FF54D261B3AC433009664B5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Interface.strings; sourceTree = "<group>"; };
 		1FF54D271B3AC447009664B5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +160,14 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		1F57C9AC1BDA4D31002B11BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F57C9AD1BDA4D42002B11BC /* BatteryObject.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1FA8EC381B37043D001BEE4B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +181,7 @@
 			children = (
 				1F984E281BB094710068E6C5 /* AboutViewController.h */,
 				1F984E291BB094710068E6C5 /* AboutViewController.m */,
+				1FF06E5F1BDD3B0300CE23A6 /* NotificationViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -196,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				1FC720E01B3440E100F9DDEA /* AppDelegate.swift */,
+				1F57C9AC1BDA4D31002B11BC /* Model */,
 				1F2F152C1B67C0890073F61A /* Helpers */,
 				1FA8EC391B37043F001BEE4B /* View Controllers */,
 				1FA8EC381B37043D001BEE4B /* Views */,
@@ -207,9 +224,9 @@
 		1FC720DE1B3440E100F9DDEA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1FC63A9B1B67DCF600DED4A7 /* PhoneBattery-Bridging-Header.h */,
 				1FC720E21B3440E100F9DDEA /* Images.xcassets */,
 				1FC720DF1B3440E100F9DDEA /* Info.plist */,
+				1FC63A9B1B67DCF600DED4A7 /* PhoneBattery-Bridging-Header.h */,
 				1F3148E21B39A9E100AD0038 /* Launch Screen.xib */,
 				1F8350A01B3977FA00E65388 /* Localizable.strings */,
 			);
@@ -236,6 +253,7 @@
 		1FC721001B3440E800F9DDEA /* PhoneBattery WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1F57C9AF1BDA50F7002B11BC /* ExtensionDelegate.swift */,
 				1FC721051B3440E800F9DDEA /* GlanceController.swift */,
 				1FC721031B3440E800F9DDEA /* InterfaceController.swift */,
 				1FD645631BC1A31600E76A65 /* ComplicationController.swift */,
@@ -361,7 +379,7 @@
 						DevelopmentTeam = 2379EAXEPK;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -450,6 +468,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FA8EC371B370439001BEE4B /* CreatorTableViewCell.swift in Sources */,
+				1F57C9AE1BDA4D42002B11BC /* BatteryObject.swift in Sources */,
+				1FF06E601BDD3B0300CE23A6 /* NotificationViewController.swift in Sources */,
 				1FEBBA941B68FFB400111B23 /* DeviceInformation.swift in Sources */,
 				1F2F152B1B67BF970073F61A /* UIImage+Additions.swift in Sources */,
 				1F984E2A1BB094710068E6C5 /* AboutViewController.m in Sources */,
@@ -470,8 +490,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4EDF041BDB0D9900C4E6F6 /* BatteryObject.swift in Sources */,
 				1FC721041B3440E800F9DDEA /* InterfaceController.swift in Sources */,
 				1FC721061B3440E800F9DDEA /* GlanceController.swift in Sources */,
+				1F57C9B01BDA50F7002B11BC /* ExtensionDelegate.swift in Sources */,
 				1FD645641BC1A31600E76A65 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,14 @@
 "UNKNOWN" = "Unknown";
 "FULL" = "Full";
 
-"PHONE_BATTERY" = "Phone Battery";
+"HELP" = "Help";
+"CANCEL" = "Cancel";
+
+"SETTINGS" = "Settings";
+"NOTIFICATIONS" = "Notifications";
+"NOTIFICATION_DESCRIPTION" = "You will receive a notification if you reach one of the selected percentages above.";
+
+"PHONE_BATTERY" = "PhoneBattery";
 "HELP" = "Help";
 "WELCOME" = "Welcome";
 "RATE_ON_STORE" = "Rate on the App Store";

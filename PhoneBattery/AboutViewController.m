@@ -18,9 +18,10 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
 @interface AboutViewController () <MFMailComposeViewControllerDelegate, WCSessionDelegate>
 {
     UIVisualEffectView *introVisualEffectView;
-    WCSession *session;
     BatteryInformation *batteryInformation;
 }
+
+@property (nonatomic) WCSession *session;
 
 @end
 
@@ -33,11 +34,9 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
      batteryInformation = [BatteryInformation new];
     
     if ([WCSession isSupported]) {
-        session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
-        
-        [self sendInformationToWatch];
+        _session = [WCSession defaultSession];
+        _session.delegate = self;
+        [_session activateSession];
     }
 
     
@@ -49,8 +48,8 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sharePressed:)];
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryLevelChanged:) name:UIDeviceBatteryLevelDidChangeNotification object:batteryInformation.device];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryStateChanged:) name:UIDeviceBatteryStateDidChangeNotification object:batteryInformation.device];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryLevelChanged:) name:UIDeviceBatteryLevelDidChangeNotification object:batteryInformation.device];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryStateChanged:) name:UIDeviceBatteryStateDidChangeNotification object:batteryInformation.device];
     
     
     [self setupViews];
@@ -347,7 +346,7 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -357,6 +356,8 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
     } else if (section == 1) {
         return 1;
     } else if (section == 2) {
+        return 1;
+    } else if (section == 3) {
         return 2;
     }
     return 0;
@@ -367,8 +368,10 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
     if (section == 0) {
         return NSLocalizedString(@"GENERAL", nil).uppercaseString;
     } else if (section == 1) {
-        return NSLocalizedString(@"WHO_MADE_THIS", nil).uppercaseString;
+        return NSLocalizedString(@"SETTINGS", nil).uppercaseString;
     } else if (section == 2) {
+        return NSLocalizedString(@"WHO_MADE_THIS", nil).uppercaseString;
+    } else if (section == 3) {
         return NSLocalizedString(@"MORE", nil).uppercaseString;
     }
     return nil;
@@ -376,8 +379,8 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    if (section == 2) {
-        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+    if (section == 3) {
+        UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
         
         UILabel *thanksLabel = [UILabel new];
         thanksLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -386,22 +389,30 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
         thanksLabel.font = [UIFont systemFontOfSize:12];
         thanksLabel.numberOfLines = 0;
         thanksLabel.textColor = [UIColor colorWithRed:0.46 green:0.46 blue:0.48 alpha:1];
-        [headerView addSubview:thanksLabel];
+        [footerView addSubview:thanksLabel];
         
-        [headerView addConstraint:[NSLayoutConstraint constraintWithItem:thanksLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:headerView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
+        [footerView addConstraint:[NSLayoutConstraint constraintWithItem:thanksLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:footerView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
         
-        [headerView addConstraint:[NSLayoutConstraint constraintWithItem:thanksLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:headerView attribute:NSLayoutAttributeTop multiplier:1.0 constant:5]];
+        [footerView addConstraint:[NSLayoutConstraint constraintWithItem:thanksLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:footerView attribute:NSLayoutAttributeTop multiplier:1.0 constant:5]];
         
-        [headerView addConstraint:[NSLayoutConstraint constraintWithItem:thanksLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:headerView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-50]];
+        [footerView addConstraint:[NSLayoutConstraint constraintWithItem:thanksLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:footerView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-50]];
         
-        return headerView;
+        return footerView;
     }
     return nil;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == 3) {
+        return 40;
+    }
+    return 30;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1) {
+    if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             return 75;
         }
@@ -421,7 +432,7 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            cell.textLabel.text = NSLocalizedString(@"SUPPORT", nil);
+            cell.textLabel.text = NSLocalizedString(@"HELP", nil);
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         } else if (indexPath.row == 1) {
             cell.textLabel.text = NSLocalizedString(@"INTRODUCTION", nil);
@@ -432,12 +443,17 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
         }
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
+            cell.textLabel.text = NSLocalizedString(@"NOTIFICATIONS", nil);
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+    } else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
             cell2.nameLabel.text = @"Marcel Voss";
             cell2.jobLabel.text = NSLocalizedString(@"JOB_TITLE", nil);
             cell2.avatarImageView.image = [UIImage imageNamed:@"MarcelAvatar"];
             return cell2;
         }
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section == 3) {
         if (indexPath.row == 0) {
             cell.textLabel.text = NSLocalizedString(@"PB_TWITTER", nil);
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -446,7 +462,6 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     }
-    
     return cell;
 }
 
@@ -456,27 +471,43 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
         if (indexPath.row == 0) {
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             
-            if ([MFMailComposeViewController canSendMail]) {
-                MFMailComposeViewController *mailComposer = [MFMailComposeViewController new];
-                mailComposer.mailComposeDelegate = self;
-                mailComposer.navigationBar.tintColor = [UIColor colorWithRed:0 green:0.86 blue:0.55 alpha:1];
-                
-                UIDevice *device = [UIDevice currentDevice];
-                NSDictionary *identifierDictionary = [DeviceInformation appIdentifiers];
-                NSString *subjectString = [NSString stringWithFormat:@"Support for PhoneBattery %@ (%@)",
-                                           identifierDictionary[@"shortString"], identifierDictionary[@"buildString"]];
-                NSString *bodyString = [NSString stringWithFormat:@"\n\n\n-----\niOS Version: %@\nDevice: %@\n", device.systemVersion, [DeviceInformation hardwareIdentifier]];
-                
-                [mailComposer setMessageBody:bodyString isHTML:NO];
-                [mailComposer setSubject:subjectString];
-                [mailComposer setToRecipients:@[@"help@marcelvoss.com"]];
-                
-                [self presentViewController:mailComposer animated:YES completion:nil];
-            }
+            UIAlertController *alertSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
             
+            [alertSheet addAction:[UIAlertAction actionWithTitle:@"FAQ" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                // TODO: Implement FAQ
+            }]];
+            
+            [alertSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Support", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                if ([MFMailComposeViewController canSendMail]) {
+                    MFMailComposeViewController *mailComposer = [MFMailComposeViewController new];
+                    mailComposer.mailComposeDelegate = self;
+                    mailComposer.navigationBar.tintColor = [UIColor colorWithRed:0 green:0.86 blue:0.55 alpha:1];
+                    
+                    UIDevice *device = [UIDevice currentDevice];
+                    NSDictionary *identifierDictionary = [DeviceInformation appIdentifiers];
+                    NSString *subjectString = [NSString stringWithFormat:@"Support for PhoneBattery %@ (%@)",
+                                               identifierDictionary[@"shortString"], identifierDictionary[@"buildString"]];
+                    NSString *bodyString = [NSString stringWithFormat:@"\n\n\n-----\niOS Version: %@\nDevice: %@\n", device.systemVersion, [DeviceInformation hardwareIdentifier]];
+                    
+                    [mailComposer setMessageBody:bodyString isHTML:NO];
+                    [mailComposer setSubject:subjectString];
+                    [mailComposer setToRecipients:@[@"help@marcelvoss.com"]];
+                    
+                    [self presentViewController:mailComposer animated:YES completion:nil];
+                }
+                
+            }]];
+            
+            [alertSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL", nil) style:UIAlertActionStyleCancel handler:nil]];
+            
+            [self presentViewController:alertSheet animated:YES completion:nil];
+            
+            /*
             if (![session isWatchAppInstalled]) {
                 
             }
+            */
             
         } else if (indexPath.row == 1) {
             [self showIntroduction];
@@ -487,12 +518,18 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
         }
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
+            // TODO: Missing implementation
+            NotificationViewController *notificationVC = [[NotificationViewController alloc] initWithStyle:UITableViewStyleGrouped];
+            [self.navigationController pushViewController:notificationVC animated:YES];
+        }
+    } else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             
             SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:twitterURL]];
             [self presentViewController:safariVC animated:YES completion:nil];
         }
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section == 3) {
         if (indexPath.row == 0) {
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             
@@ -509,6 +546,7 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
 
 #pragma mark - NSNotificationCenter Selectors
 
+/*
 - (void)batteryLevelChanged:(NSNotification *)notification
 {
     [self sendInformationToWatch];
@@ -517,7 +555,7 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
 - (void)batteryStateChanged:(NSNotification *)notification
 {
     [self sendInformationToWatch];
-}
+}*/
 
 #pragma mark - WatchConnectivity Methods
 
@@ -526,17 +564,21 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
     NSNumber *batteryLevel = [NSNumber numberWithInteger:[batteryInformation currentBatteryLevel]];
     NSNumber *batteryState = [NSNumber numberWithInt:batteryInformation.currentBatteryState];
     
-    NSError *connectivityError = nil;
+    BatteryObject *batteryObject = [batteryInformation concludedInformation];
+    
     NSDictionary *applicationDictionary = @{@"batteryLevel": batteryLevel,
                                             @"batteryState": batteryState,
                                             @"batteryStateString": [BatteryInformation
-                                                                    stringForBatteryState:batteryInformation.currentBatteryState]};
-    [session updateApplicationContext:applicationDictionary error:&connectivityError];
+                                                                    stringForBatteryState:batteryInformation.currentBatteryState],
+                                            @"batteryObject": batteryObject};
     
-    if (connectivityError != nil) {
-        // TODO: Handle error here
-        NSLog(@"Watch Connectivity Error: %@", connectivityError.localizedDescription);
-    }
+    [_session sendMessage:applicationDictionary replyHandler:^(NSDictionary<NSString *,id> * _Nonnull replyMessage) {
+        
+        
+        
+    } errorHandler:^(NSError * _Nonnull error) {
+        
+    }];
 }
 
 #pragma mark - MFMailComposeViewControllerDelegate
@@ -548,10 +590,26 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
 
 #pragma mark - WCSessionDelegate
 
-- (void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
 {
-    
+    BOOL update = message[@"needsUpdate"];
+    if (update) {
+        
+        NSNumber *batteryLevel = [NSNumber numberWithInteger:[batteryInformation currentBatteryLevel]];
+        NSNumber *batteryState = [NSNumber numberWithInt:batteryInformation.currentBatteryState];
+        
+        BatteryObject *batteryObject = [batteryInformation concludedInformation];
+        
+        NSDictionary *applicationDictionary = @{@"batteryLevel": batteryLevel,
+                                                @"batteryState": batteryState,
+                                                @"batteryStateString": [BatteryInformation
+                                                                        stringForBatteryState:batteryInformation.currentBatteryState],
+                                                @"batteryObject": batteryObject};
+        
+        NSLog(@"%@", applicationDictionary[@"batteryLevel"]);
+        replyHandler(applicationDictionary);
+        
+    }
 }
-
 
 @end
