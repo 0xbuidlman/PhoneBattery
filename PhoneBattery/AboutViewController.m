@@ -123,7 +123,7 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
 
 - (void)showIntroduction
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     introVisualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
@@ -316,7 +316,7 @@ static NSString *appStoreURL = @"https://itunes.apple.com/us/app/phonebattery-yo
 
 - (void)closeIntroduction
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     
     [UIView animateWithDuration:0.3 animations:^{
         introVisualEffectView.alpha = 0;
