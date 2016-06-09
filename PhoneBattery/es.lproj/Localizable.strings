@@ -11,7 +11,14 @@
 "UNKNOWN" = "Desconcido";
 "FULL" = "Llena";
 
-"PHONE_BATTERY" = "Batería";
+"HELP" = "Ayuda";
+"CANCEL" = "Cancelar";
+
+"SETTINGS" = "Configuraciones";
+"NOTIFICATIONS" = "Notificaciones";
+"NOTIFICATION_DESCRIPTION" = "Se le notificará cuando la batería del teléfono llegar a uno de los valores seleccionados arriba.";
+
+"PHONE_BATTERY" = "PhoneBattery";
 "HELP" = "Ayuda";
 "WELCOME" = "Bienvenido";
 "RATE_ON_STORE" = "Califícanos en el App Store";
@@ -24,12 +31,13 @@
 "SHARE_TITLE" = "PhoneBattery es una manera simple y fácil de revisar el estado de carga de la batería de tu teléfono móvil en tu Apple Watch!";
 
 "AVAILABLE_GITHUB" = "Disponible en GitHub";
+"PB_TWITTER" = "Mas en Twitter";
 "MORE" = "Mas";
 
 "BATTERY" = "Batería";
 
 "INTRODUCTION_GREETING" = "Hola";
-"INTRODUCTION_DESCRIPTION_1" = "PhoneBattery es una forma rápida de revisar el estado de carga de tu teléfono móvil en tu Apple Watch. .";
+"INTRODUCTION_DESCRIPTION_1" = "PhoneBattery es una forma rápida de revisar el estado de carga de tu teléfono móvil en tu Apple Watch.";
 "INTRODUCTION_DESCRIPTION_2" = "Una interfáz rápida y simple para acceder al nivel de batería al instante.";
 "INTRODUCTION_DESCRIPTION_3" = "¡Configura nuestro Glance y accede aún mas rápido al nivel de batería!";
 
