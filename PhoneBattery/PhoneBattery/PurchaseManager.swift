@@ -1,5 +1,5 @@
 //
-//  IAPManager.swift
+//  PurchaseManager.swift
 //  PhoneBattery
 //
 //  Created by Marcel Voß on 21/02/2017.
@@ -8,6 +8,8 @@
 
 import UIKit
 
-class IAPManager: NSObject {
-
+class PurchaseManager: NSObject {
+    
+    
+    
 }

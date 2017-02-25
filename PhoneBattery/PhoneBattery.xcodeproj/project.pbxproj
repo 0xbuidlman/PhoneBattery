@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F903AD51E60595A00678865 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD41E60595A00678865 /* IntroductionViewController.swift */; };
+		1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD61E605D1500678865 /* SettingsModel.swift */; };
 		1F9DE7BF1E5CE72F0052B29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */; };
 		1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */; };
 		1F9DE7C41E5CE72F0052B29F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7C21E5CE72F0052B29F /* LaunchScreen.storyboard */; };
@@ -17,7 +19,7 @@
 		1F9DE7F31E5CE9920052B29F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DE7F11E5CE9920052B29F /* Fabric.framework */; };
 		1F9DE7F41E5CE9920052B29F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DE7F21E5CE9920052B29F /* Crashlytics.framework */; };
 		1F9DE7F61E5CE9E40052B29F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7F51E5CE9E40052B29F /* AboutTableViewController.swift */; };
-		1F9DE7F91E5CEB270052B29F /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7F81E5CEB270052B29F /* IAPManager.swift */; };
+		1F9DE7F91E5CEB270052B29F /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7F81E5CEB270052B29F /* PurchaseManager.swift */; };
 		1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F903AD41E60595A00678865 /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		1F903AD61E605D1500678865 /* SettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		1F9DE7BB1E5CE72F0052B29F /* PhoneBattery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneBattery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +60,7 @@
 		1F9DE7F11E5CE9920052B29F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		1F9DE7F21E5CE9920052B29F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		1F9DE7F51E5CE9E40052B29F /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
-		1F9DE7F81E5CEB270052B29F /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		1F9DE7F81E5CEB270052B29F /* PurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */,
+				1F903AD61E605D1500678865 /* SettingsModel.swift */,
 				1F9DE7F71E5CEB160052B29F /* Utilities */,
 				1F9DE7ED1E5CE7640052B29F /* Views */,
 				1F9DE7EC1E5CE75D0052B29F /* View Controllers */,
@@ -164,6 +169,7 @@
 		1F9DE7EC1E5CE75D0052B29F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1F903AD41E60595A00678865 /* IntroductionViewController.swift */,
 				1F9DE7F51E5CE9E40052B29F /* AboutTableViewController.swift */,
 			);
 			name = "View Controllers";
@@ -179,7 +185,7 @@
 		1F9DE7F71E5CEB160052B29F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1F9DE7F81E5CEB270052B29F /* IAPManager.swift */,
+				1F9DE7F81E5CEB270052B29F /* PurchaseManager.swift */,
 				1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */,
 			);
 			name = Utilities;
@@ -348,8 +354,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */,
 				1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */,
-				1F9DE7F91E5CEB270052B29F /* IAPManager.swift in Sources */,
+				1F903AD51E60595A00678865 /* IntroductionViewController.swift in Sources */,
+				1F9DE7F91E5CEB270052B29F /* PurchaseManager.swift in Sources */,
 				1F9DE7BF1E5CE72F0052B29F /* AppDelegate.swift in Sources */,
 				1F9DE7F61E5CE9E40052B29F /* AboutTableViewController.swift in Sources */,
 			);
@@ -602,6 +610,7 @@
 				1F9DE7E01E5CE72F0052B29F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F9DE7E11E5CE72F0052B29F /* Build configuration list for PBXNativeTarget "PhoneBatteryTests" */ = {
 			isa = XCConfigurationList;
@@ -610,6 +619,7 @@
 				1F9DE7E31E5CE72F0052B29F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F9DE7E41E5CE72F0052B29F /* Build configuration list for PBXNativeTarget "PhoneBatteryUITests" */ = {
 			isa = XCConfigurationList;
@@ -618,6 +628,7 @@
 				1F9DE7E61E5CE72F0052B29F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
