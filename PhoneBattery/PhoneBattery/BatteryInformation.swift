@@ -9,5 +9,21 @@
 import UIKit
 
 class BatteryInformation: NSObject {
+    
+    let device = UIDevice.current
+    
+    var batteryState: UIDeviceBatteryState {
+        return device.batteryState
+    }
+    
+    var batteryLevel: Int {
+        return Int(device.batteryLevel * 100)
+    }
+    
+    override init() {
+        super.init()
+        
+        device.isBatteryMonitoringEnabled = true
+    }
 
 }
