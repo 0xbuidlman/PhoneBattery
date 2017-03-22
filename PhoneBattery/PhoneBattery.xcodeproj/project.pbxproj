@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F903AD51E60595A00678865 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD41E60595A00678865 /* IntroductionViewController.swift */; };
+		1F29147C1E705850002931A7 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147B1E705850002931A7 /* MainTableViewController.swift */; };
+		1F29147E1E7059AC002931A7 /* UIColor+Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */; };
+		1F2914801E705D8A002931A7 /* TableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147F1E705D8A002931A7 /* TableFooterView.swift */; };
 		1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD61E605D1500678865 /* SettingsModel.swift */; };
 		1F9DE7BF1E5CE72F0052B29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */; };
 		1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */; };
@@ -21,6 +23,7 @@
 		1F9DE7F61E5CE9E40052B29F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7F51E5CE9E40052B29F /* AboutTableViewController.swift */; };
 		1F9DE7F91E5CEB270052B29F /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7F81E5CEB270052B29F /* PurchaseManager.swift */; };
 		1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */; };
+		1FFA41711E76D24200296102 /* CreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA41701E76D24200296102 /* CreatorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F903AD41E60595A00678865 /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		1F29147B1E705850002931A7 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Brand.swift"; sourceTree = "<group>"; };
+		1F29147F1E705D8A002931A7 /* TableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFooterView.swift; sourceTree = "<group>"; };
 		1F903AD61E605D1500678865 /* SettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		1F9DE7BB1E5CE72F0052B29F /* PhoneBattery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneBattery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		1F9DE7F51E5CE9E40052B29F /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		1F9DE7F81E5CEB270052B29F /* PurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryInformation.swift; sourceTree = "<group>"; };
+		1FFA41701E76D24200296102 /* CreatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +175,7 @@
 		1F9DE7EC1E5CE75D0052B29F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1F903AD41E60595A00678865 /* IntroductionViewController.swift */,
+				1F29147B1E705850002931A7 /* MainTableViewController.swift */,
 				1F9DE7F51E5CE9E40052B29F /* AboutTableViewController.swift */,
 			);
 			name = "View Controllers";
@@ -178,6 +184,8 @@
 		1F9DE7ED1E5CE7640052B29F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F29147F1E705D8A002931A7 /* TableFooterView.swift */,
+				1FFA41701E76D24200296102 /* CreatorTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 			children = (
 				1F9DE7F81E5CEB270052B29F /* PurchaseManager.swift */,
 				1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */,
+				1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -356,9 +365,12 @@
 			files = (
 				1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */,
 				1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */,
-				1F903AD51E60595A00678865 /* IntroductionViewController.swift in Sources */,
+				1FFA41711E76D24200296102 /* CreatorTableViewCell.swift in Sources */,
+				1F2914801E705D8A002931A7 /* TableFooterView.swift in Sources */,
 				1F9DE7F91E5CEB270052B29F /* PurchaseManager.swift in Sources */,
+				1F29147E1E7059AC002931A7 /* UIColor+Brand.swift in Sources */,
 				1F9DE7BF1E5CE72F0052B29F /* AppDelegate.swift in Sources */,
+				1F29147C1E705850002931A7 /* MainTableViewController.swift in Sources */,
 				1F9DE7F61E5CE9E40052B29F /* AboutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

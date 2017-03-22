@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Fabric.with([Crashlytics.self])
 
-        self.window?.rootViewController = AboutTableViewController(style: .grouped)
+        let navController = UINavigationController(rootViewController: MainTableViewController(style: .grouped))
+        self.window?.rootViewController = navController
         
         self.window!.backgroundColor = UIColor.white
         self.window!.makeKeyAndVisible()
