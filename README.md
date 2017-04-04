@@ -39,4 +39,6 @@ Thanks to [Joe Dawson](http://joedawson.me) who created PhoneBattery's gorgeous 
 <img src="Preview/phone_1.png" alt="" height="400"/>
 
 ## License
+Although, there is nothing to stop you from republishing PhoneBattery on the App Store, I would appreciate it if you wouldn't do so.
+
 PhoneBattery is available under the MIT license. See the [LICENSE](https://github.com/marcelvoss/PhoneBattery/blob/master/LICENSE.md) file for more information.
