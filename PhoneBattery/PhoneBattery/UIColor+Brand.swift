@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     
-    class func phoneBatteryGreen() -> UIColor {
+    class var phoneBatteryGreen: UIColor {
         return UIColor(red:0.29, green:0.82, blue:0.55, alpha:1.00)
     }
     
