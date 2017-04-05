@@ -10,11 +10,13 @@ import UIKit
 import MessageUI
 import StoreKit
 import SafariServices
+import WatchConnectivity
 
 class MainTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     let notificationSwitch = UISwitch()
     var visualEffectView: UIVisualEffectView?
+    var session: WCSession?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +32,16 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         notificationSwitch.onTintColor = .phoneBatteryGreen
         
         setupViewHierachy()
+        
+        if WCSession.isSupported() {
+            session = WCSession.default()
+            //session?.delegate = self
+            session?.activate()
+        }
     }
     
     func setupViewHierachy() {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 150))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 140))
         
         let imageView = UIImageView(frame: headerView.bounds)
         imageView.image = UIImage(named: "HeaderImage")
@@ -92,21 +100,18 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     }
     
     func sharePressed() {
-        
         if let phoneBatteryAppStoreURL = URL(string: "https://itunes.apple.com/de/app/phonebattery-your-phones-battery-on-your-wrist/id1009278300?l=en&mt=8") {
+            
             let shareText = "Just discovered PhoneBattery – an amazing app for displaying your phone's battery life on your Watch."
             
             let activityVC = UIActivityViewController(activityItems: [shareText, phoneBatteryAppStoreURL], applicationActivities: nil)
-            
             present(activityVC, animated: true, completion: nil)
         }
-
     }
 
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
         if section == 0 {
             return TableFooterView("By enabling, you'll occasionally receive notifications regarding your phone's battery state and battery level.")
         } else if section == 2 {

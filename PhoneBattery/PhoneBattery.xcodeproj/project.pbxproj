@@ -12,6 +12,15 @@
 		1F2914801E705D8A002931A7 /* TableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147F1E705D8A002931A7 /* TableFooterView.swift */; };
 		1F781AF71E93AABB00EA590C /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781AF61E93AABB00EA590C /* DeviceInformation.swift */; };
 		1F781AF91E93B5D400EA590C /* AppearanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781AF81E93B5D400EA590C /* AppearanceTableViewController.swift */; };
+		1F781B001E951ED200EA590C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F781AFE1E951ED200EA590C /* Interface.storyboard */; };
+		1F781B021E951ED200EA590C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F781B011E951ED200EA590C /* Assets.xcassets */; };
+		1F781B091E951ED200EA590C /* PhoneBattery-Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1F781B081E951ED200EA590C /* PhoneBattery-Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1F781B0E1E951ED200EA590C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B0D1E951ED200EA590C /* InterfaceController.swift */; };
+		1F781B101E951ED200EA590C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B0F1E951ED200EA590C /* ExtensionDelegate.swift */; };
+		1F781B121E951ED200EA590C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B111E951ED200EA590C /* ComplicationController.swift */; };
+		1F781B141E951ED200EA590C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F781B131E951ED200EA590C /* Assets.xcassets */; };
+		1F781B181E951ED200EA590C /* PhoneBattery-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1F781AFC1E951ED200EA590C /* PhoneBattery-Watch.app */; };
+		1F781B231E95266F00EA590C /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B221E95266F00EA590C /* IntroductionViewController.swift */; };
 		1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD61E605D1500678865 /* SettingsModel.swift */; };
 		1F9DE7BF1E5CE72F0052B29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */; };
 		1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */; };
@@ -28,6 +37,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1F781B0A1E951ED200EA590C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F9DE7B31E5CE72F0052B29F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F781B071E951ED200EA590C;
+			remoteInfo = "PhoneBattery-Watch Extension";
+		};
+		1F781B161E951ED200EA590C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F9DE7B31E5CE72F0052B29F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F781AFB1E951ED200EA590C;
+			remoteInfo = "PhoneBattery-Watch";
+		};
 		1F9DE7CB1E5CE72F0052B29F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1F9DE7B31E5CE72F0052B29F /* Project object */;
@@ -44,12 +67,48 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1F781B1C1E951ED200EA590C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1F781B091E951ED200EA590C /* PhoneBattery-Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F781B201E951ED200EA590C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1F781B181E951ED200EA590C /* PhoneBattery-Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1F29147B1E705850002931A7 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Brand.swift"; sourceTree = "<group>"; };
 		1F29147F1E705D8A002931A7 /* TableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFooterView.swift; sourceTree = "<group>"; };
 		1F781AF61E93AABB00EA590C /* DeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
 		1F781AF81E93B5D400EA590C /* AppearanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceTableViewController.swift; sourceTree = "<group>"; };
+		1F781AFC1E951ED200EA590C /* PhoneBattery-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhoneBattery-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F781AFF1E951ED200EA590C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		1F781B011E951ED200EA590C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F781B031E951ED200EA590C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F781B081E951ED200EA590C /* PhoneBattery-Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PhoneBattery-Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F781B0D1E951ED200EA590C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		1F781B0F1E951ED200EA590C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		1F781B111E951ED200EA590C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		1F781B131E951ED200EA590C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F781B151E951ED200EA590C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F781B221E95266F00EA590C /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		1F903AD61E605D1500678865 /* SettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		1F9DE7BB1E5CE72F0052B29F /* PhoneBattery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneBattery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +132,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1F781B051E951ED200EA590C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1F9DE7B81E5CE72F0052B29F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,12 +166,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F781AFD1E951ED200EA590C /* PhoneBattery-Watch */ = {
+			isa = PBXGroup;
+			children = (
+				1F781AFE1E951ED200EA590C /* Interface.storyboard */,
+				1F781B011E951ED200EA590C /* Assets.xcassets */,
+				1F781B031E951ED200EA590C /* Info.plist */,
+			);
+			path = "PhoneBattery-Watch";
+			sourceTree = "<group>";
+		};
+		1F781B0C1E951ED200EA590C /* PhoneBattery-Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1F781B0D1E951ED200EA590C /* InterfaceController.swift */,
+				1F781B0F1E951ED200EA590C /* ExtensionDelegate.swift */,
+				1F781B111E951ED200EA590C /* ComplicationController.swift */,
+				1F781B211E951F5400EA590C /* Resources */,
+			);
+			path = "PhoneBattery-Watch Extension";
+			sourceTree = "<group>";
+		};
+		1F781B211E951F5400EA590C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F781B131E951ED200EA590C /* Assets.xcassets */,
+				1F781B151E951ED200EA590C /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1F9DE7B21E5CE72F0052B29F = {
 			isa = PBXGroup;
 			children = (
 				1F9DE7BD1E5CE72F0052B29F /* PhoneBattery */,
 				1F9DE7CD1E5CE72F0052B29F /* PhoneBatteryTests */,
 				1F9DE7D81E5CE72F0052B29F /* PhoneBatteryUITests */,
+				1F781AFD1E951ED200EA590C /* PhoneBattery-Watch */,
+				1F781B0C1E951ED200EA590C /* PhoneBattery-Watch Extension */,
 				1F9DE7BC1E5CE72F0052B29F /* Products */,
 				1F9DE7E71E5CE73B0052B29F /* Frameworks */,
 			);
@@ -117,6 +215,8 @@
 				1F9DE7BB1E5CE72F0052B29F /* PhoneBattery.app */,
 				1F9DE7CA1E5CE72F0052B29F /* PhoneBatteryTests.xctest */,
 				1F9DE7D51E5CE72F0052B29F /* PhoneBatteryUITests.xctest */,
+				1F781AFC1E951ED200EA590C /* PhoneBattery-Watch.app */,
+				1F781B081E951ED200EA590C /* PhoneBattery-Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,8 +277,9 @@
 		1F9DE7EC1E5CE75D0052B29F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1F29147B1E705850002931A7 /* MainTableViewController.swift */,
 				1F781AF81E93B5D400EA590C /* AppearanceTableViewController.swift */,
+				1F781B221E95266F00EA590C /* IntroductionViewController.swift */,
+				1F29147B1E705850002931A7 /* MainTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -186,8 +287,8 @@
 		1F9DE7ED1E5CE7640052B29F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F29147F1E705D8A002931A7 /* TableFooterView.swift */,
 				1FFA41701E76D24200296102 /* CreatorTableViewCell.swift */,
+				1F29147F1E705D8A002931A7 /* TableFooterView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -195,9 +296,9 @@
 		1F9DE7F71E5CEB160052B29F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1F9DE7F81E5CEB270052B29F /* PurchaseManager.swift */,
-				1F781AF61E93AABB00EA590C /* DeviceInformation.swift */,
 				1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */,
+				1F781AF61E93AABB00EA590C /* DeviceInformation.swift */,
+				1F9DE7F81E5CEB270052B29F /* PurchaseManager.swift */,
 				1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */,
 			);
 			name = Utilities;
@@ -206,6 +307,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1F781AFB1E951ED200EA590C /* PhoneBattery-Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F781B1D1E951ED200EA590C /* Build configuration list for PBXNativeTarget "PhoneBattery-Watch" */;
+			buildPhases = (
+				1F781AFA1E951ED200EA590C /* Resources */,
+				1F781B1C1E951ED200EA590C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F781B0B1E951ED200EA590C /* PBXTargetDependency */,
+			);
+			name = "PhoneBattery-Watch";
+			productName = "PhoneBattery-Watch";
+			productReference = 1F781AFC1E951ED200EA590C /* PhoneBattery-Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		1F781B071E951ED200EA590C /* PhoneBattery-Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F781B191E951ED200EA590C /* Build configuration list for PBXNativeTarget "PhoneBattery-Watch Extension" */;
+			buildPhases = (
+				1F781B041E951ED200EA590C /* Sources */,
+				1F781B051E951ED200EA590C /* Frameworks */,
+				1F781B061E951ED200EA590C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PhoneBattery-Watch Extension";
+			productName = "PhoneBattery-Watch Extension";
+			productReference = 1F781B081E951ED200EA590C /* PhoneBattery-Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		1F9DE7BA1E5CE72F0052B29F /* PhoneBattery */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F9DE7DE1E5CE72F0052B29F /* Build configuration list for PBXNativeTarget "PhoneBattery" */;
@@ -214,10 +349,12 @@
 				1F9DE7B81E5CE72F0052B29F /* Frameworks */,
 				1F9DE7B91E5CE72F0052B29F /* Resources */,
 				1F9DE7EE1E5CE8050052B29F /* Crashlytics */,
+				1F781B201E951ED200EA590C /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1F781B171E951ED200EA590C /* PBXTargetDependency */,
 			);
 			name = PhoneBattery;
 			productName = PhoneBattery;
@@ -266,10 +403,20 @@
 		1F9DE7B31E5CE72F0052B29F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Marcel Voss";
 				TargetAttributes = {
+					1F781AFB1E951ED200EA590C = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 2379EAXEPK;
+						ProvisioningStyle = Automatic;
+					};
+					1F781B071E951ED200EA590C = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 2379EAXEPK;
+						ProvisioningStyle = Automatic;
+					};
 					1F9DE7BA1E5CE72F0052B29F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2379EAXEPK;
@@ -313,11 +460,30 @@
 				1F9DE7BA1E5CE72F0052B29F /* PhoneBattery */,
 				1F9DE7C91E5CE72F0052B29F /* PhoneBatteryTests */,
 				1F9DE7D41E5CE72F0052B29F /* PhoneBatteryUITests */,
+				1F781AFB1E951ED200EA590C /* PhoneBattery-Watch */,
+				1F781B071E951ED200EA590C /* PhoneBattery-Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1F781AFA1E951ED200EA590C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F781B021E951ED200EA590C /* Assets.xcassets in Resources */,
+				1F781B001E951ED200EA590C /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F781B061E951ED200EA590C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F781B141E951ED200EA590C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1F9DE7B91E5CE72F0052B29F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,10 +528,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1F781B041E951ED200EA590C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F781B101E951ED200EA590C /* ExtensionDelegate.swift in Sources */,
+				1F781B0E1E951ED200EA590C /* InterfaceController.swift in Sources */,
+				1F781B121E951ED200EA590C /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1F9DE7B71E5CE72F0052B29F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F781B231E95266F00EA590C /* IntroductionViewController.swift in Sources */,
 				1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */,
 				1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */,
 				1FFA41711E76D24200296102 /* CreatorTableViewCell.swift in Sources */,
@@ -398,6 +575,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1F781B0B1E951ED200EA590C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F781B071E951ED200EA590C /* PhoneBattery-Watch Extension */;
+			targetProxy = 1F781B0A1E951ED200EA590C /* PBXContainerItemProxy */;
+		};
+		1F781B171E951ED200EA590C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F781AFB1E951ED200EA590C /* PhoneBattery-Watch */;
+			targetProxy = 1F781B161E951ED200EA590C /* PBXContainerItemProxy */;
+		};
 		1F9DE7CC1E5CE72F0052B29F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1F9DE7BA1E5CE72F0052B29F /* PhoneBattery */;
@@ -411,6 +598,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1F781AFE1E951ED200EA590C /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F781AFF1E951ED200EA590C /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		1F9DE7C21E5CE72F0052B29F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -422,6 +617,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1F781B1A1E951ED200EA590C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 2379EAXEPK;
+				INFOPLIST_FILE = "PhoneBattery-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcelvoss.PhoneBattery.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		1F781B1B1E951ED200EA590C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 2379EAXEPK;
+				INFOPLIST_FILE = "PhoneBattery-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcelvoss.PhoneBattery.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		1F781B1E1E951ED200EA590C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 2379EAXEPK;
+				IBSC_MODULE = PhoneBattery_Watch_Extension;
+				INFOPLIST_FILE = "PhoneBattery-Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcelvoss.PhoneBattery.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		1F781B1F1E951ED200EA590C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 2379EAXEPK;
+				IBSC_MODULE = PhoneBattery_Watch_Extension;
+				INFOPLIST_FILE = "PhoneBattery-Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcelvoss.PhoneBattery.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
 		1F9DE7DC1E5CE72F0052B29F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -611,6 +880,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F781B191E951ED200EA590C /* Build configuration list for PBXNativeTarget "PhoneBattery-Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F781B1A1E951ED200EA590C /* Debug */,
+				1F781B1B1E951ED200EA590C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1F781B1D1E951ED200EA590C /* Build configuration list for PBXNativeTarget "PhoneBattery-Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F781B1E1E951ED200EA590C /* Debug */,
+				1F781B1F1E951ED200EA590C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1F9DE7B61E5CE72F0052B29F /* Build configuration list for PBXProject "PhoneBattery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

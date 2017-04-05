@@ -18,9 +18,4 @@ class DeviceInformation: NSObject {
         return Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     }
     
-    
-    
-    
-    
-
 }
