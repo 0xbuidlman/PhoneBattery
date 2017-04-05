@@ -55,7 +55,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         tableView.tableHeaderView = headerView
         
         
-        let iconImageView = UIImageView(image: UIImage(named: "MaskedIcon"))
+        let iconImageView = UIImageView(image: UIImage(named: "CircularW"))
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.contentMode = .scaleAspectFit
         headerView.addSubview(iconImageView)
