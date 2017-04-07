@@ -1,20 +1,28 @@
 //
-//  InterfaceController.swift
-//  PhoneBattery-Watch Extension
+//  BatteryViewController.swift
+//  PhoneBattery
 //
-//  Created by Marcel Voß on 05.04.17.
+//  Created by Marcel Voß on 07.04.17.
 //  Copyright © 2017 Marcel Voss. All rights reserved.
 //
+
+import UIKit
 
 import WatchKit
 import Foundation
 import WatchConnectivity
 
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
+
+class BatteryViewController: WKInterfaceController, WCSessionDelegate {
     
-    @IBOutlet var statusLabel: WKInterfaceLabel!
-    @IBOutlet var levelLabel: WKInterfaceLabel!
-    @IBOutlet var groupItem: WKInterfaceGroup!
+    @IBOutlet var batteryGroupItem: WKInterfaceGroup!
+    @IBOutlet var batteryLevelLabel: WKInterfaceLabel!
+    @IBOutlet var batteryStatusLabel: WKInterfaceLabel!
+    
+    @IBOutlet var circularGroupItem: WKInterfaceGroup!
+    @IBOutlet var circularLevelLabel: WKInterfaceLabel!
+    @IBOutlet var circularStatusLabel: WKInterfaceLabel!
+    
     let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
     
     var lastBatteryLevel = 0
@@ -44,7 +52,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         super.willActivate()
         
         setTitle("PhoneBattery")
-
+        
         if let reachable = session?.isReachable, let theSession = session {
             if reachable {
                 
@@ -54,6 +62,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                     if let batteryLevel = reply["batteryLevel"] as? Int,  let batteryState = reply["batteryState"] as? Int{
                         
                         DispatchQueue.main.sync {
+                            self.batteryGroupItem.setHidden(true)
+                            self.batteryStatusLabel.setHidden(true)
                             self.updateInterface(level: batteryLevel, state: batteryState)
                         }
                         
@@ -68,21 +78,26 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     func updateInterface(level: Int, state: Int) {
-        levelLabel.setText("\(level)%")
+        circularLevelLabel.setText("\(level)%")
+        batteryLevelLabel.setText("\(level)%")
         
         if state == 0 {
-            statusLabel.setText("Unknown")
+            circularStatusLabel.setText("Unknown")
+            batteryStatusLabel.setText("Unknown")
         } else if state == 1 {
-            statusLabel.setText("Left")
+            circularStatusLabel.setText("Left")
+            batteryStatusLabel.setText("Left")
         } else if state == 2 {
-            statusLabel.setText("Charging")
+            circularStatusLabel.setText("Charging")
+            batteryStatusLabel.setText("Charging")
         } else if state == 3 {
-            statusLabel.setText("Full")
+            circularStatusLabel.setText("Full")
+            batteryStatusLabel.setText("Full")
         }
         
         if lastBatteryLevel != level {
-            groupItem.setBackgroundImageNamed("CircularFrame-")
-            self.groupItem.startAnimatingWithImages(in: NSMakeRange(0, level+1), duration: 1, repeatCount: 1)
+            circularGroupItem.setBackgroundImageNamed("CircularFrame-")
+            self.circularGroupItem.startAnimatingWithImages(in: NSMakeRange(lastBatteryLevel, level+1), duration: 1, repeatCount: 1)
         }
         
         lastBatteryLevel = level
@@ -103,8 +118,5 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         
         
-        
     }
-    
-    
 }

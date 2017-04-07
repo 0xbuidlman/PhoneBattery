@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mYe-wk-kdf">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,30 +8,37 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
+        <!--Battery View Controller-->
+        <scene sceneID="dsa-xI-IUR">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PhoneBattery_Watch" customModuleProvider="target">
+                <controller contentMode="scaleAspectFit" id="mYe-wk-kdf" customClass="BatteryViewController" customModule="PhoneBattery_Watch_Extension">
                     <items>
-                        <group width="1" height="147" alignment="left" verticalAlignment="center" backgroundImage="CircularFrame-0" contentMode="scaleAspectFit" layout="vertical" id="ecB-KB-50F">
+                        <group width="0.90000000000000002" height="71" alignment="center" verticalAlignment="center" backgroundImage="BatteryFrame-50" contentMode="scaleAspectFit" layout="vertical" id="yMi-7o-uA9">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="Level" textAlignment="center" id="hY0-93-Jk3">
+                                <label alignment="center" verticalAlignment="center" text="50%" textAlignment="center" id="ivY-jz-eI5"/>
+                            </items>
+                        </group>
+                        <label alignment="center" verticalAlignment="center" text="Charging" id="p29-Zx-Lgd"/>
+                        <group width="1" height="147" alignment="left" backgroundImage="CircularFrame-50" contentMode="scaleAspectFit" layout="vertical" id="rMa-dS-gt5">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="50%" id="aEE-Qh-He0">
                                     <fontDescription key="font" type="system" pointSize="26"/>
                                 </label>
-                                <label alignment="center" verticalAlignment="center" text="Status" textAlignment="center" id="4M2-Nq-Hww">
-                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                                </label>
+                                <label alignment="center" verticalAlignment="center" text="Charging" id="vyq-fC-NTj"/>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="groupItem" destination="ecB-KB-50F" id="VQY-Z2-74a"/>
-                        <outlet property="levelLabel" destination="hY0-93-Jk3" id="tYs-aM-EUj"/>
-                        <outlet property="statusLabel" destination="4M2-Nq-Hww" id="KIh-Q5-H2k"/>
+                        <outlet property="batteryGroupItem" destination="yMi-7o-uA9" id="eyL-Qi-vIT"/>
+                        <outlet property="batteryLevelLabel" destination="ivY-jz-eI5" id="2tb-b4-ALV"/>
+                        <outlet property="batteryStatusLabel" destination="p29-Zx-Lgd" id="1fu-og-O5Q"/>
+                        <outlet property="circularGroupItem" destination="rMa-dS-gt5" id="Wrf-fL-vTa"/>
+                        <outlet property="circularLevelLabel" destination="aEE-Qh-He0" id="71C-Wf-QWK"/>
+                        <outlet property="circularStatusLabel" destination="vyq-fC-NTj" id="rOd-2L-nQC"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="148" y="129"/>
+            <point key="canvasLocation" x="436" y="136.5"/>
         </scene>
     </scenes>
 </document>

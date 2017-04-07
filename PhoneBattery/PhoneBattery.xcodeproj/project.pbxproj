@@ -18,7 +18,6 @@
 		1F781B001E951ED200EA590C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F781AFE1E951ED200EA590C /* Interface.storyboard */; };
 		1F781B021E951ED200EA590C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F781B011E951ED200EA590C /* Assets.xcassets */; };
 		1F781B091E951ED200EA590C /* PhoneBattery-Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1F781B081E951ED200EA590C /* PhoneBattery-Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1F781B0E1E951ED200EA590C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B0D1E951ED200EA590C /* InterfaceController.swift */; };
 		1F781B101E951ED200EA590C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B0F1E951ED200EA590C /* ExtensionDelegate.swift */; };
 		1F781B121E951ED200EA590C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B111E951ED200EA590C /* ComplicationController.swift */; };
 		1F781B141E951ED200EA590C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F781B131E951ED200EA590C /* Assets.xcassets */; };
@@ -34,6 +33,7 @@
 		1F9DE7F31E5CE9920052B29F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DE7F11E5CE9920052B29F /* Fabric.framework */; };
 		1F9DE7F41E5CE9920052B29F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DE7F21E5CE9920052B29F /* Crashlytics.framework */; };
 		1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */; };
+		1FA62B661E97FD7300EBD84D /* BatteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */; };
 		1FFA41711E76D24200296102 /* CreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA41701E76D24200296102 /* CreatorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +107,6 @@
 		1F781B011E951ED200EA590C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F781B031E951ED200EA590C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F781B081E951ED200EA590C /* PhoneBattery-Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PhoneBattery-Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F781B0D1E951ED200EA590C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		1F781B0F1E951ED200EA590C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		1F781B111E951ED200EA590C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		1F781B131E951ED200EA590C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		1F9DE7F11E5CE9920052B29F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		1F9DE7F21E5CE9920052B29F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryInformation.swift; sourceTree = "<group>"; };
+		1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryViewController.swift; sourceTree = "<group>"; };
 		1FFA41701E76D24200296102 /* CreatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +190,7 @@
 		1F781B0C1E951ED200EA590C /* PhoneBattery-Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1F781B0D1E951ED200EA590C /* InterfaceController.swift */,
+				1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */,
 				1F781B0F1E951ED200EA590C /* ExtensionDelegate.swift */,
 				1F781B111E951ED200EA590C /* ComplicationController.swift */,
 				1F781B211E951F5400EA590C /* Resources */,
@@ -545,8 +545,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FA62B661E97FD7300EBD84D /* BatteryViewController.swift in Sources */,
 				1F781B101E951ED200EA590C /* ExtensionDelegate.swift in Sources */,
-				1F781B0E1E951ED200EA590C /* InterfaceController.swift in Sources */,
 				1F781B121E951ED200EA590C /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
