@@ -30,13 +30,26 @@ class SettingsModel: NSObject {
         }
     }
     
+    var useStatusNotifications: Bool {
+        get {
+            return userDefaults.bool(forKey: "UseStatusNotifications")
+        } set {
+            userDefaults.set(newValue, forKey: "UseStatusNotifications")
+            userDefaults.synchronize()
+        }
+    }
+    
     func setDefaults() -> Bool {
         if hasRunBefore  {
             // Make sure to not overwrite previously set defaults
             return false
         } else {
             
+            useStatusNotifications = true
+            useCircularIndicator = true
             
+            hasRunBefore = true
+            userDefaults.synchronize()
             
             return true
         }
