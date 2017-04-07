@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0CEA251E9653760093B4A9 /* dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0CEA241E9653760093B4A9 /* dark.png */; };
+		1F0CEA271E965A080093B4A9 /* inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0CEA261E965A080093B4A9 /* inverted.png */; };
+		1F0CEA2B1E965A260093B4A9 /* elegant.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0CEA2A1E965A260093B4A9 /* elegant.png */; };
 		1F29147C1E705850002931A7 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147B1E705850002931A7 /* MainTableViewController.swift */; };
 		1F29147E1E7059AC002931A7 /* UIColor+Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */; };
 		1F2914801E705D8A002931A7 /* TableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147F1E705D8A002931A7 /* TableFooterView.swift */; };
@@ -91,6 +94,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F0CEA241E9653760093B4A9 /* dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark.png; sourceTree = "<group>"; };
+		1F0CEA261E965A080093B4A9 /* inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inverted.png; sourceTree = "<group>"; };
+		1F0CEA2A1E965A260093B4A9 /* elegant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elegant.png; sourceTree = "<group>"; };
 		1F29147B1E705850002931A7 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Brand.swift"; sourceTree = "<group>"; };
 		1F29147F1E705D8A002931A7 /* TableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFooterView.swift; sourceTree = "<group>"; };
@@ -161,6 +167,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F0CEA2C1E965BBD0093B4A9 /* Alternative Icons */ = {
+			isa = PBXGroup;
+			children = (
+				1F0CEA241E9653760093B4A9 /* dark.png */,
+				1F0CEA261E965A080093B4A9 /* inverted.png */,
+				1F0CEA2A1E965A260093B4A9 /* elegant.png */,
+			);
+			name = "Alternative Icons";
+			sourceTree = "<group>";
+		};
 		1F781AFD1E951ED200EA590C /* PhoneBattery-Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +275,7 @@
 		1F9DE7EB1E5CE74D0052B29F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1F0CEA2C1E965BBD0093B4A9 /* Alternative Icons */,
 				1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */,
 				1F9DE7C21E5CE72F0052B29F /* LaunchScreen.storyboard */,
 				1F9DE7EA1E5CE7400052B29F /* PhoneBattery.entitlements */,
@@ -481,9 +498,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0CEA2B1E965A260093B4A9 /* elegant.png in Resources */,
 				1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */,
 				1F9DE7F01E5CE82A0052B29F /* Localizable.strings in Resources */,
+				1F0CEA271E965A080093B4A9 /* inverted.png in Resources */,
 				1F9DE7C41E5CE72F0052B29F /* LaunchScreen.storyboard in Resources */,
+				1F0CEA251E9653760093B4A9 /* dark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,7 +643,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -641,7 +661,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -660,7 +680,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -679,7 +699,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         // Override point for customization after application launch.
         
+        // TODO: Activate
         //Fabric.with([Crashlytics.self])
 
         let navController = UINavigationController(rootViewController: MainTableViewController(style: .grouped))

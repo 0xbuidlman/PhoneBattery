@@ -9,6 +9,16 @@
 import UIKit
 
 class SettingsModel: NSObject {
+    
+    let userDefaults = UserDefaults.standard
+    
+    var alternativeIconActive: Bool {
+        get {
+            return userDefaults.bool(forKey: "AlternativeIconActive")
+        } set {
+            userDefaults.set(newValue, forKey: "AlternativeIconActive")
+        }
+    }
 
     
     

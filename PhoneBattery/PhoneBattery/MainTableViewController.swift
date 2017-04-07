@@ -12,16 +12,21 @@ import StoreKit
 import SafariServices
 import WatchConnectivity
 
-class MainTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class MainTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, WCSessionDelegate {
     
     let notificationSwitch = UISwitch()
     var visualEffectView: UIVisualEffectView?
-    var session: WCSession?
-
+    let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Welcome"
+        
+        if WCSession.isSupported() {
+            session?.delegate = self
+            session?.activate()
+        }
         
         navigationController?.navigationBar.tintColor = .phoneBatteryGreen
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharePressed))
@@ -33,11 +38,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         
         setupViewHierachy()
         
-        if WCSession.isSupported() {
-            session = WCSession.default()
-            //session?.delegate = self
-            session?.activate()
-        }
+        
     }
     
     func setupViewHierachy() {
@@ -67,7 +68,6 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         headerView.addConstraint(NSLayoutConstraint(item: iconImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 75))
         
         headerView.addConstraint(NSLayoutConstraint(item: iconImageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 75))
-        
         
         
         let nameLabel = UILabel()
@@ -155,7 +155,6 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         return 0
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
@@ -197,7 +196,6 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
             }
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
-                
                 let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
                 
                 alert.addAction(UIAlertAction(title: "FAQ", style: .default, handler: { (action) in
@@ -228,6 +226,10 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                 
             } else if indexPath.row == 1 {
                 
+                
+                
+                
+                
             } else if indexPath.row == 2 {
                 if #available(iOS 10.3, *) {
                     SKStoreReviewController.requestReview()
@@ -254,13 +256,48 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         composeViewController.setToRecipients(["me@marcelvoss.com"])
         composeViewController.setSubject("PhoneBattery \(DeviceInformation.versionNumber) (\(DeviceInformation.buildNumber))")
         
-        composeViewController.setMessageBody("\n\n\n------\niOS Version: \(UIDevice.current.systemVersion)", isHTML: false)
+        composeViewController.setMessageBody("\n\n\n------\niOS Version: \(UIDevice.current.systemVersion)\nHardware Identifier: \(DeviceInformation.hardwareIdentifier)", isHTML: false)
         
         present(composeViewController, animated: true, completion: nil)
     }
     
+    // MARK: MFMailComposeViewControllerDelegate
+    
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: WCSessionDelegate
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage
+        message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+
+        
+        if let requiresUpdate = message["requiresUpdate"] as? Bool {
+            if requiresUpdate {
+                
+                let battery = BatteryInformation()
+                let applicationData = ["batteryLevel": battery.batteryLevel,
+                                       "batteryState": battery.batteryState] as [String : Any]
+                
+                replyHandler(applicationData as [String : Any])
+                
+            }
+        }
+        
+        
     }
 
 }

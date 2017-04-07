@@ -12,8 +12,8 @@ class BatteryInformation: NSObject {
     
     let device = UIDevice.current
     
-    var batteryState: UIDeviceBatteryState {
-        return device.batteryState
+    var batteryState: Int {
+        return device.batteryState.rawValue
     }
     
     var batteryLevel: Int {

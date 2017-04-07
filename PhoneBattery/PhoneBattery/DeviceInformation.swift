@@ -18,4 +18,15 @@ class DeviceInformation: NSObject {
         return Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     }
     
+    class var hardwareIdentifier: String {
+        if let key = "hw.machine".cString(using: String.Encoding.utf8) {
+            var size: Int = 0
+            sysctlbyname(key, nil, &size, nil, 0)
+            var machine = [CChar](repeating: 0, count: Int(size))
+            sysctlbyname(key, &machine, &size, nil, 0)
+            return String(cString:machine)
+        }
+        return "Unknown identifier"
+    }
+    
 }
