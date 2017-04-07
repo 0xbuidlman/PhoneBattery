@@ -11,8 +11,6 @@ I had the initial idea for this app on the plane from WWDC back to Germany, poli
 
 Unfortunately, I don't have enough time to keep this app updated. So, if you are interested help me updating PhoneBattery!
 
-Starting with PhoneBattery 2.0, you can optionally support its development by buying the IAP for $0.99. This is less than a cup of coffee and will help me maintain PhoneBattery. PhoneBattery will _stay free_ though. The only benefit of the IAP is the unlocking of new app icons.
-
 ### System Requirements
 
 * Requires iOS 9 or newer

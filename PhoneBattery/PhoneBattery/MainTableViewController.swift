@@ -112,12 +112,17 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == 0 {
-            return TableFooterView("By enabling, you'll occasionally receive notifications regarding your phone's battery state and battery level.")
-        } else if section == 2 {
+        if section == 2 {
             let footer = TableFooterView("Thanks for using PhoneBattery! <3")
             footer.textLabel.textAlignment = .center
             return footer
+        }
+        return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 0 {
+            return "By enabling, you'll occasionally receive notifications regarding your phone's battery state and battery level."
         }
         return nil
     }
@@ -138,9 +143,9 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0 {
+        /*if section == 0 {
             return 35
-        }
+        }*/
         return tableView.sectionFooterHeight
     }
 

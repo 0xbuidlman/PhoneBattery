@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F0CEA251E9653760093B4A9 /* dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0CEA241E9653760093B4A9 /* dark.png */; };
-		1F0CEA271E965A080093B4A9 /* inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0CEA261E965A080093B4A9 /* inverted.png */; };
-		1F0CEA2B1E965A260093B4A9 /* elegant.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0CEA2A1E965A260093B4A9 /* elegant.png */; };
 		1F29147C1E705850002931A7 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147B1E705850002931A7 /* MainTableViewController.swift */; };
 		1F29147E1E7059AC002931A7 /* UIColor+Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */; };
 		1F2914801E705D8A002931A7 /* TableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147F1E705D8A002931A7 /* TableFooterView.swift */; };
@@ -22,7 +19,6 @@
 		1F781B121E951ED200EA590C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B111E951ED200EA590C /* ComplicationController.swift */; };
 		1F781B141E951ED200EA590C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F781B131E951ED200EA590C /* Assets.xcassets */; };
 		1F781B181E951ED200EA590C /* PhoneBattery-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1F781AFC1E951ED200EA590C /* PhoneBattery-Watch.app */; };
-		1F781B231E95266F00EA590C /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B221E95266F00EA590C /* IntroductionViewController.swift */; };
 		1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD61E605D1500678865 /* SettingsModel.swift */; };
 		1F9DE7BF1E5CE72F0052B29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */; };
 		1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */; };
@@ -34,7 +30,6 @@
 		1F9DE7F41E5CE9920052B29F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DE7F21E5CE9920052B29F /* Crashlytics.framework */; };
 		1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */; };
 		1FA62B661E97FD7300EBD84D /* BatteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */; };
-		1FFA41711E76D24200296102 /* CreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA41701E76D24200296102 /* CreatorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,9 +89,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F0CEA241E9653760093B4A9 /* dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark.png; sourceTree = "<group>"; };
-		1F0CEA261E965A080093B4A9 /* inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inverted.png; sourceTree = "<group>"; };
-		1F0CEA2A1E965A260093B4A9 /* elegant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elegant.png; sourceTree = "<group>"; };
 		1F29147B1E705850002931A7 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Brand.swift"; sourceTree = "<group>"; };
 		1F29147F1E705D8A002931A7 /* TableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFooterView.swift; sourceTree = "<group>"; };
@@ -111,7 +103,6 @@
 		1F781B111E951ED200EA590C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		1F781B131E951ED200EA590C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F781B151E951ED200EA590C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F781B221E95266F00EA590C /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		1F903AD61E605D1500678865 /* SettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		1F9DE7BB1E5CE72F0052B29F /* PhoneBattery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneBattery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,7 +121,6 @@
 		1F9DE7F21E5CE9920052B29F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryInformation.swift; sourceTree = "<group>"; };
 		1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryViewController.swift; sourceTree = "<group>"; };
-		1FFA41701E76D24200296102 /* CreatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,16 +157,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F0CEA2C1E965BBD0093B4A9 /* Alternative Icons */ = {
-			isa = PBXGroup;
-			children = (
-				1F0CEA241E9653760093B4A9 /* dark.png */,
-				1F0CEA261E965A080093B4A9 /* inverted.png */,
-				1F0CEA2A1E965A260093B4A9 /* elegant.png */,
-			);
-			name = "Alternative Icons";
-			sourceTree = "<group>";
-		};
 		1F781AFD1E951ED200EA590C /* PhoneBattery-Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,7 +255,6 @@
 		1F9DE7EB1E5CE74D0052B29F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1F0CEA2C1E965BBD0093B4A9 /* Alternative Icons */,
 				1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */,
 				1F9DE7C21E5CE72F0052B29F /* LaunchScreen.storyboard */,
 				1F9DE7EA1E5CE7400052B29F /* PhoneBattery.entitlements */,
@@ -289,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				1F781AF81E93B5D400EA590C /* AppearanceTableViewController.swift */,
-				1F781B221E95266F00EA590C /* IntroductionViewController.swift */,
 				1F29147B1E705850002931A7 /* MainTableViewController.swift */,
 			);
 			name = "View Controllers";
@@ -298,7 +276,6 @@
 		1F9DE7ED1E5CE7640052B29F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1FFA41701E76D24200296102 /* CreatorTableViewCell.swift */,
 				1F29147F1E705D8A002931A7 /* TableFooterView.swift */,
 			);
 			name = Views;
@@ -498,12 +475,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F0CEA2B1E965A260093B4A9 /* elegant.png in Resources */,
 				1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */,
 				1F9DE7F01E5CE82A0052B29F /* Localizable.strings in Resources */,
-				1F0CEA271E965A080093B4A9 /* inverted.png in Resources */,
 				1F9DE7C41E5CE72F0052B29F /* LaunchScreen.storyboard in Resources */,
-				1F0CEA251E9653760093B4A9 /* dark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,10 +529,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F781B231E95266F00EA590C /* IntroductionViewController.swift in Sources */,
 				1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */,
 				1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */,
-				1FFA41711E76D24200296102 /* CreatorTableViewCell.swift in Sources */,
 				1F2914801E705D8A002931A7 /* TableFooterView.swift in Sources */,
 				1F29147E1E7059AC002931A7 /* UIColor+Brand.swift in Sources */,
 				1F781AF71E93AABB00EA590C /* DeviceInformation.swift in Sources */,

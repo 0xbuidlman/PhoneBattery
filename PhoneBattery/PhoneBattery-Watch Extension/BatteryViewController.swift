@@ -27,6 +27,11 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
     
     var lastBatteryLevel = 0
     
+    enum Interface {
+        case battery
+        case circular
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -53,6 +58,9 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
         
         setTitle("PhoneBattery")
         
+        self.circularGroupItem.setHidden(true)
+        //self.batteryStatusLabel.setHidden(true)
+        
         if let reachable = session?.isReachable, let theSession = session {
             if reachable {
                 
@@ -62,8 +70,7 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
                     if let batteryLevel = reply["batteryLevel"] as? Int,  let batteryState = reply["batteryState"] as? Int{
                         
                         DispatchQueue.main.sync {
-                            self.batteryGroupItem.setHidden(true)
-                            self.batteryStatusLabel.setHidden(true)
+                            
                             self.updateInterface(level: batteryLevel, state: batteryState)
                         }
                         
@@ -96,10 +103,13 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
         }
         
         if lastBatteryLevel != level {
+            
             circularGroupItem.setBackgroundImageNamed("CircularFrame-")
             self.circularGroupItem.startAnimatingWithImages(in: NSMakeRange(lastBatteryLevel, level+1), duration: 1, repeatCount: 1)
         }
         
+        self.circularGroupItem.setHidden(true)
+        //self.batteryStatusLabel.setHidden(true)
         lastBatteryLevel = level
         
     }

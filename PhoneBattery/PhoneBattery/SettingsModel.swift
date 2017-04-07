@@ -12,14 +12,15 @@ class SettingsModel: NSObject {
     
     let userDefaults = UserDefaults.standard
     
-    var alternativeIconActive: Bool {
+    var hasRunBefore: Bool {
         get {
-            return userDefaults.bool(forKey: "AlternativeIconActive")
+            return userDefaults.bool(forKey: "HasRunBefore")
         } set {
-            userDefaults.set(newValue, forKey: "AlternativeIconActive")
+            userDefaults.set(newValue, forKey: "HasRunBefore")
         }
     }
-
+    
+    
     
     
 }

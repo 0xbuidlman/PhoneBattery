@@ -19,7 +19,7 @@
                             </items>
                         </group>
                         <label alignment="center" verticalAlignment="center" text="Charging" id="p29-Zx-Lgd"/>
-                        <group width="1" height="147" alignment="left" backgroundImage="CircularFrame-50" contentMode="scaleAspectFit" layout="vertical" id="rMa-dS-gt5">
+                        <group width="1" height="147" alignment="center" verticalAlignment="center" backgroundImage="CircularFrame-50" contentMode="scaleAspectFit" layout="vertical" id="rMa-dS-gt5">
                             <items>
                                 <label alignment="center" verticalAlignment="center" text="50%" id="aEE-Qh-He0">
                                     <fontDescription key="font" type="system" pointSize="26"/>
@@ -41,4 +41,5 @@
             <point key="canvasLocation" x="436" y="136.5"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.3843137254901961" green="0.83529411764705885" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
