@@ -17,6 +17,28 @@ class SettingsModel: NSObject {
             return userDefaults.bool(forKey: "HasRunBefore")
         } set {
             userDefaults.set(newValue, forKey: "HasRunBefore")
+            userDefaults.synchronize()
+        }
+    }
+    
+    var useCircularIndicator: Bool {
+        get {
+            return userDefaults.bool(forKey: "UseCircularIndicator")
+        } set {
+            userDefaults.set(newValue, forKey: "UseCircularIndicator")
+            userDefaults.synchronize()
+        }
+    }
+    
+    func setDefaults() -> Bool {
+        if hasRunBefore  {
+            // Make sure to not overwrite previously set defaults
+            return false
+        } else {
+            
+            
+            
+            return true
         }
     }
     
