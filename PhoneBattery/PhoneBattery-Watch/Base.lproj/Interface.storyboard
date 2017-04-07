@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
@@ -14,15 +13,21 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PhoneBattery_Watch" customModuleProvider="target">
                     <items>
-                        <group width="1" height="147" alignment="center" verticalAlignment="center" backgroundImage="CircularFrame0" contentMode="scaleAspectFit" id="ecB-KB-50F">
+                        <group width="1" height="147" alignment="left" verticalAlignment="center" backgroundImage="CircularFrame-0" contentMode="scaleAspectFit" layout="vertical" id="ecB-KB-50F">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="Level" textAlignment="center" id="hY0-93-Jk3"/>
+                                <label alignment="center" verticalAlignment="center" text="Level" textAlignment="center" id="hY0-93-Jk3">
+                                    <fontDescription key="font" type="system" pointSize="26"/>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="Status" textAlignment="center" id="4M2-Nq-Hww">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                </label>
                             </items>
                         </group>
                     </items>
                     <connections>
                         <outlet property="groupItem" destination="ecB-KB-50F" id="VQY-Z2-74a"/>
                         <outlet property="levelLabel" destination="hY0-93-Jk3" id="tYs-aM-EUj"/>
+                        <outlet property="statusLabel" destination="4M2-Nq-Hww" id="KIh-Q5-H2k"/>
                     </connections>
                 </controller>
             </objects>

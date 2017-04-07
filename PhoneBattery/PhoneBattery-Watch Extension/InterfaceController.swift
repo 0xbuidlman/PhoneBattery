@@ -12,9 +12,12 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
+    @IBOutlet var statusLabel: WKInterfaceLabel!
     @IBOutlet var levelLabel: WKInterfaceLabel!
     @IBOutlet var groupItem: WKInterfaceGroup!
     let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
+    
+    var lastBatteryLevel = 0
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -41,7 +44,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         super.willActivate()
         
         setTitle("PhoneBattery")
-        groupItem.setBackgroundImageNamed("CircularFrame-")
 
         if let reachable = session?.isReachable, let theSession = session {
             if reachable {
@@ -66,9 +68,25 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     func updateInterface(level: Int, state: Int) {
-        levelLabel.setText("Level: \(level)%")
-        groupItem.setBackgroundImageNamed("CircularFrame-")
-        self.groupItem.startAnimatingWithImages(in: NSMakeRange(0, level+1), duration: 1, repeatCount: 1)
+        levelLabel.setText("\(level)%")
+        
+        if state == 0 {
+            statusLabel.setText("Unknown")
+        } else if state == 1 {
+            statusLabel.setText("Left")
+        } else if state == 2 {
+            statusLabel.setText("Charging")
+        } else if state == 3 {
+            statusLabel.setText("Full")
+        }
+        
+        if lastBatteryLevel != level {
+            groupItem.setBackgroundImageNamed("CircularFrame-")
+            self.groupItem.startAnimatingWithImages(in: NSMakeRange(0, level+1), duration: 1, repeatCount: 1)
+        }
+        
+        lastBatteryLevel = level
+        
     }
     
     override func didDeactivate() {

@@ -25,5 +25,16 @@ class BatteryInformation: NSObject {
         
         device.isBatteryMonitoringEnabled = true
     }
-
+    
+    func stringForBatteryState(state: Int) -> String {
+        if state == 1 {
+            return "Unplugged"
+        } else if state == 2 {
+            return "Charging"
+        } else if state == 3 {
+            return "Full"
+        } else {
+            return "Unknown"
+        }
+    }
 }
