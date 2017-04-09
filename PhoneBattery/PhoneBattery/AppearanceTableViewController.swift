@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class AppearanceTableViewController: UITableViewController {
+class AppearanceTableViewController: UITableViewController, WCSessionDelegate {
     
-    let interfaceScrollView = UIScrollView()
+    let circularInterfaceSwitch = UISwitch()
+    let settings = SettingsModel()
+    let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Appearance"
         
-
+        if WCSession.isSupported() {
+            session?.delegate = self
+            session?.activate()
+        }
         
+        circularInterfaceSwitch.onTintColor = .phoneBatteryGreen
+        circularInterfaceSwitch.setOn(settings.useCircularIndicator, animated: false)
+        circularInterfaceSwitch.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
+        
+        
+        let headerView = PreviewWatchView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 220))
+        tableView.tableHeaderView = headerView
+    }
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,27 +43,6 @@ class AppearanceTableViewController: UITableViewController {
     
 
     // MARK: - Table view data source
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 150
-        }
-        return tableView.rowHeight
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Watch Interface"
-        }
-        return nil
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if section == 0 {
-            return ""
-        }
-        return nil
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -70,30 +64,13 @@ class AppearanceTableViewController: UITableViewController {
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
+                cell?.textLabel?.text = "Circular Indicator"
                 cell?.selectionStyle = .none
-                
-                let homescreenImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 150))
-                homescreenImageView.image = UIImage(named: "HSB1")
-                homescreenImageView.contentMode = .scaleToFill
-                cell?.contentView.addSubview(homescreenImageView)
-                
-                
-                let effect = UIBlurEffect(style: .dark)
-                let visualEffectView = UIVisualEffectView(effect: effect)
-                visualEffectView.frame = homescreenImageView.bounds
-                homescreenImageView.addSubview(visualEffectView)
-                
-                
-                interfaceScrollView.frame = homescreenImageView.bounds
-                
-                cell?.contentView.addSubview(interfaceScrollView)
-                
-                
-                
-                
+                cell?.accessoryView = circularInterfaceSwitch
             }
+
         }
-            
+        
         return cell!
     }
     
