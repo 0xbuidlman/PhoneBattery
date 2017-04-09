@@ -34,8 +34,8 @@ Thanks to everyone!
 Thanks to [Joe Dawson](http://joedawson.me) who created PhoneBattery's gorgeous icon.
 
 ## Preview
-<img src="Preview/watch_1.jpg" alt="" height="300"/>
-<img src="Preview/watch_2.jpg" alt="" height="300"/>
+<img src="Preview/watch_1.png" alt="" height="250"/>
+<img src="Preview/watch_2.png" alt="" height="250"/>
 <img src="Preview/phone_1.png" alt="" height="400"/>
 
 ## License
