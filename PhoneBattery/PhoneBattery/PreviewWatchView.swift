@@ -10,13 +10,6 @@ import UIKit
 
 class PreviewWatchView: UIView {
     
-    enum WatchInterface {
-        case circular
-        case battery
-    }
-    
-    var watchInterface: WatchInterface?
-    
     fileprivate let batteryObject = BatteryInformation()
     fileprivate let settings = SettingsModel()
     
@@ -28,16 +21,17 @@ class PreviewWatchView: UIView {
     fileprivate let batteryPercentageLabel = UILabel()
     fileprivate let watchImageView = UIImageView(image: UIImage(named: "WatchSteel"))
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setupViewHierarchy()
         
         NotificationCenter.default.addObserver(self, selector: #selector(refreshBatteryInformation),
                                                name: NSNotification.Name.UIDeviceBatteryLevelDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshBatteryInformation),
                                                name: NSNotification.Name.UIDeviceBatteryStateDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupViewHierarchy), name: NSNotification.Name("WatchInterfaceDidChange"), object: nil)
+        
+        
+        setupViewHierarchy()
         
         
         timer?.fire()
@@ -53,7 +47,6 @@ class PreviewWatchView: UIView {
     }
     
     func setupViewHierarchy() {
-        
         watchImageView.translatesAutoresizingMaskIntoConstraints = false
         watchImageView.contentMode = .scaleAspectFit
         addSubview(watchImageView)
@@ -159,7 +152,7 @@ class PreviewWatchView: UIView {
         } else {
             proxyView.addSubview(batteryStatusLabel)
             
-            proxyView.addConstraint(NSLayoutConstraint(item: batteryStatusLabel, attribute: .top, relatedBy: .equal, toItem: batteryImageView, attribute: .bottom, multiplier: 1.0, constant: -1))
+            proxyView.addConstraint(NSLayoutConstraint(item: batteryStatusLabel, attribute: .top, relatedBy: .equal, toItem: batteryImageView, attribute: .bottom, multiplier: 1.0, constant: -3))
             
             proxyView.addConstraint(NSLayoutConstraint(item: batteryStatusLabel, attribute: .centerX, relatedBy: .equal, toItem: proxyView, attribute: .centerX, multiplier: 1.0, constant: 0))
         }
@@ -178,7 +171,6 @@ class PreviewWatchView: UIView {
     
     func animateWatch() {
         var images = [UIImage]()
-        
         for i in 0 ... batteryObject.batteryLevel {
             if let image = settings.useCircularIndicator ? UIImage(named: "CircularFrame-\(i)") : UIImage(named: "BatteryFrame-\(i)") {
                 images.append(image)
@@ -193,7 +185,6 @@ class PreviewWatchView: UIView {
     }
     
     func refreshBatteryInformation() {
-        
         batteryPercentageLabel.text = "\(batteryObject.batteryLevel)%"
         
         if settings.useCircularIndicator {
