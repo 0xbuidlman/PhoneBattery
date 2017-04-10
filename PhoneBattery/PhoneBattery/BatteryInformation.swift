@@ -17,7 +17,12 @@ class BatteryInformation: NSObject {
     }
     
     var batteryLevel: Int {
-        return Int(device.batteryLevel * 100)
+        // Check if application is running in simulator; if so, return some number since battery level isn't supported in simulator
+        #if arch(i386) || arch(x86_64)
+            return 75
+        #else
+            return Int(device.batteryLevel * 100)
+        #endif
     }
     
     override init() {
