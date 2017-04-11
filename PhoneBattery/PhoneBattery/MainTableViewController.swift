@@ -171,7 +171,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         } else if section == 1 {
             return 3
         } else if section == 2 {
-            return 1
+            return 2
         }
         return 0
     }
@@ -202,6 +202,9 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         } else if indexPath.section == 2 {
             if indexPath.row == 0 {
                 cell.textLabel?.text = "Code on GitHub"
+                cell.accessoryType = .disclosureIndicator
+            } else if indexPath.row == 1 {
+                cell.textLabel?.text = "PhoneBattery on Twitter"
                 cell.accessoryType = .disclosureIndicator
             }
         }
@@ -264,6 +267,11 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
             if indexPath.row == 0 {
                 if let repoURL = URL(string: "https://github.com/marcelvoss/PhoneBattery") {
                     let safariVC = SFSafariViewController(url: repoURL, entersReaderIfAvailable: false)
+                    self.present(safariVC, animated: true, completion: nil)
+                }
+            } else if indexPath.row == 1 {
+                if let twitterURL = URL(string: "https://twitter.com/phonebatteryapp") {
+                    let safariVC = SFSafariViewController(url: twitterURL, entersReaderIfAvailable: false)
                     self.present(safariVC, animated: true, completion: nil)
                 }
             }

@@ -35,7 +35,6 @@ class PreviewWatchView: UIView {
         setupWatch()
         setupInterface()
         
-        
         timer?.fire()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshTime), userInfo: nil, repeats: true)
     }
