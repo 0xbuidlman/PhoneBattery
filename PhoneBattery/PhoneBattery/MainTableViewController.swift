@@ -42,6 +42,21 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         setupViewHierachy()
     }
     
+    func switchValueChanged(sender: UISwitch) {
+        if sender == notificationSwitch {
+            settings.useStatusNotifications = sender.isOn
+            
+            // Ask for notification authorization
+            let options: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(options: options) { (granted, error) in
+                // TODO: Add error handling
+                if granted {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+    }
+    
     func setupViewHierachy() {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 140))
         

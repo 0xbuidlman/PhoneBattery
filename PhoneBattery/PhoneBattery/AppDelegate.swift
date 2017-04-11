@@ -15,7 +15,6 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let batteryObject = BatteryInformation()
     let settings = SettingsModel()
 
 
@@ -44,6 +43,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("AppDelegate received fetch request")
         
+        if settings.useStatusNotifications {
+            let batteryObject = BatteryInformation()
+            
+            var stateString = "."
+            if batteryObject.batteryState == 2 {
+                stateString = " and is charging."
+            } else if batteryObject.batteryState == 3 {
+                stateString = " and has completed charging."
+            }
+            
+            let content = UNMutableNotificationContent()
+            content.title = "PhoneBattery"
+            content.body = "Your phone's battery level is at \(batteryObject.batteryLevel)%\(stateString)"
+            
+            let timeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
+            let request = UNNotificationRequest(identifier: "com.marcelvoss.PhoneBattery.NotifiationRequest", content: content, trigger: timeTrigger)
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    // Do something with error
+                    print("Error while scheduling battery notification: \(error.localizedDescription)")
+                    completionHandler(.failed)
+                } else {
+                    // Request was added successfully
+                    print("Scheduled battery notification")
+                    completionHandler(.newData)
+                }
+            }
+        }
         
     }
     

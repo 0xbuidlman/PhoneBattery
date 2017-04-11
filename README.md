@@ -9,6 +9,13 @@ PhoneBattery is also **available for free** on the [App Store](https://itunes.ap
 
 I had the initial idea for this app on the plane from WWDC back to Germany, polished it at home and here it is now.
 
+**Features**
+
+* battery status notifications 
+* two different watch interfaces to choose from
+* display your phone's battery level on your Apple Watch
+* no ads, no IAPs
+
 ### System Requirements
 
 * Requires iOS 10 or newer
