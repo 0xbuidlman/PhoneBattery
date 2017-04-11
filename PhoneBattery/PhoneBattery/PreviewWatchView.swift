@@ -192,15 +192,7 @@ class PreviewWatchView: UIView {
             batteryImageView.image = UIImage(named: "BatteryFrame-\(batteryObject.batteryLevel)")
         }
         
-        if batteryObject.batteryState == 0 {
-            batteryStatusLabel.text = "Unknown"
-        } else if batteryObject.batteryState == 1 {
-            batteryStatusLabel.text = "Left"
-        } else if batteryObject.batteryState == 2 {
-            batteryStatusLabel.text = "Charging"
-        } else if batteryObject.batteryState == 3 {
-            batteryStatusLabel.text = "Full"
-        }
+        batteryStatusLabel.text = batteryObject.stringForBatteryState(state: batteryObject.batteryState)
     }
 
 }

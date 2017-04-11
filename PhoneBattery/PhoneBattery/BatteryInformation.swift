@@ -38,7 +38,7 @@ class BatteryInformation: NSObject {
     
     func stringForBatteryState(state: Int) -> String {
         if state == 1 {
-            return "Unplugged"
+            return "Left"
         } else if state == 2 {
             return "Charging"
         } else if state == 3 {

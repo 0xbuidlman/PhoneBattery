@@ -11,11 +11,13 @@ import MessageUI
 import StoreKit
 import SafariServices
 import WatchConnectivity
+import UserNotifications
 
 class MainTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, WCSessionDelegate {
     
     let notificationSwitch = UISwitch()
     var visualEffectView: UIVisualEffectView?
+    let settings = SettingsModel()
     let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
     
     override func viewDidLoad() {
@@ -33,12 +35,11 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         
-        notificationSwitch.setOn(true, animated: false)
+        notificationSwitch.setOn(settings.useStatusNotifications, animated: false)
         notificationSwitch.onTintColor = .phoneBatteryGreen
+        notificationSwitch.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
         
         setupViewHierachy()
-        
-        
     }
     
     func setupViewHierachy() {

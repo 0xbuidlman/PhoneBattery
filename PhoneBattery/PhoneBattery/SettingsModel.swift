@@ -56,7 +56,7 @@ class SettingsModel: NSObject {
             return false
         } else {
             
-            useStatusNotifications = true
+            useStatusNotifications = false
             useCircularIndicator = true
             onboardingComplete = false
             

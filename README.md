@@ -39,6 +39,7 @@ Thanks to [Joe Dawson](http://joedawson.me) who created PhoneBattery's gorgeous 
 <img src="Preview/phone_1.png" alt="" height="400"/>
 <img src="Preview/phone_2.png" alt="" height="400"/>
 <img src="Preview/phone_3.png" alt="" height="400"/>
+<img src="Preview/phone_4.png" alt="" height="400"/>
 
 ## License
 Although, PhoneBattery's license doesn't stop you from publishing it on the App Store, I would highly appreciate it, if you wouldn't publish it on the store. Thanks!

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let batteryObject = BatteryInformation()
+    let settings = SettingsModel()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -41,21 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        //let localNotification =
+        print("AppDelegate received fetch request")
         
         
-        /*
-         let batteryObject = BatteryInformation().concludedInformation()
-         let level = String(batteryObject.batteryLevel) + "%"
-         
-         
-         let localNotification = UILocalNotification()
-         localNotification.fireDate = NSDate()
-         localNotification.timeZone = NSTimeZone.defaultTimeZone()
-         localNotification.alertBody = String(format: "Your battery level is at %@%%.", level)
-         localNotification.alertAction = "OK"
-         application.scheduleLocalNotification(localNotification)
- */
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
