@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A class for accessing NSUserDefaults values by property names.
 class SettingsModel: NSObject {
     
     let userDefaults = UserDefaults.standard
@@ -17,6 +18,15 @@ class SettingsModel: NSObject {
             return userDefaults.bool(forKey: "HasRunBefore")
         } set {
             userDefaults.set(newValue, forKey: "HasRunBefore")
+            userDefaults.synchronize()
+        }
+    }
+    
+    var onboardingComplete: Bool {
+        get {
+            return userDefaults.bool(forKey: "OnboardingComplete")
+        } set {
+            userDefaults.set(newValue, forKey: "OnboardingComplete")
             userDefaults.synchronize()
         }
     }
@@ -39,6 +49,7 @@ class SettingsModel: NSObject {
         }
     }
     
+    
     func setDefaults() -> Bool {
         if hasRunBefore  {
             // Make sure to not overwrite previously set defaults
@@ -47,6 +58,7 @@ class SettingsModel: NSObject {
             
             useStatusNotifications = true
             useCircularIndicator = true
+            onboardingComplete = false
             
             hasRunBefore = true
             userDefaults.synchronize()

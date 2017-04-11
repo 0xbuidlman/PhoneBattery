@@ -5,16 +5,14 @@
 # PhoneBattery
 PhoneBattery is a simple utility that lets you check your phone's battery life on your Apple Watch. It is very simple and doesn't do anything else than that.
 
-PhoneBattery is also **available for free** on the [App Store](https://itunes.apple.com/us/app/phonebattery-your-phones-battery/id1009278300?ls=1&mt=8)!
+PhoneBattery is also **available for free** on the [App Store](https://itunes.apple.com/us/app/phonebattery-your-phones-battery/id1009278300?ls=1&mt=8)! Please leave a rating, if you like PhoneBattery!
 
 I had the initial idea for this app on the plane from WWDC back to Germany, polished it at home and here it is now.
 
-Unfortunately, I don't have enough time to keep this app updated. So, if you are interested help me updating PhoneBattery!
-
 ### System Requirements
 
-* Requires iOS 9 or newer
-* Requires watchOS 2 or newer
+* Requires iOS 10 or newer
+* Requires watchOS 3 or newer
 
 You can also download an old build [here](https://github.com/marcelvoss/PhoneBattery/releases/tag/1.0.2), that is compatible to iOS 8 and watchOS 1.
 
@@ -36,6 +34,10 @@ Thanks to [Joe Dawson](http://joedawson.me) who created PhoneBattery's gorgeous 
 ## Preview
 <img src="Preview/watch_1.png" alt="" height="250"/><img src="Preview/watch_2.png" alt="" height="250"/>
 <img src="Preview/phone_1.png" alt="" height="400"/>
+<img src="Preview/phone_2.png" alt="" height="400"/>
+<img src="Preview/phone_3.png" alt="" height="400"/>
 
 ## License
+Although, PhoneBattery's license doesn't stop you from publishing it on the App Store, I would highly appreciate it, if you wouldn't publish it on the store. Thanks!
+
 PhoneBattery is available under the MIT license. See the [LICENSE](https://github.com/marcelvoss/PhoneBattery/blob/master/LICENSE.md) file for more information.
