@@ -23,7 +23,6 @@
 		1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD61E605D1500678865 /* SettingsModel.swift */; };
 		1F9DE7BF1E5CE72F0052B29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */; };
 		1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */; };
-		1F9DE7C41E5CE72F0052B29F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7C21E5CE72F0052B29F /* LaunchScreen.storyboard */; };
 		1F9DE7CF1E5CE72F0052B29F /* PhoneBatteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7CE1E5CE72F0052B29F /* PhoneBatteryTests.swift */; };
 		1F9DE7DA1E5CE72F0052B29F /* PhoneBatteryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7D91E5CE72F0052B29F /* PhoneBatteryUITests.swift */; };
 		1F9DE7F01E5CE82A0052B29F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7EF1E5CE82A0052B29F /* Localizable.strings */; };
@@ -110,7 +109,6 @@
 		1F9DE7BB1E5CE72F0052B29F /* PhoneBattery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneBattery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1F9DE7C31E5CE72F0052B29F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F9DE7C51E5CE72F0052B29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F9DE7CA1E5CE72F0052B29F /* PhoneBatteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneBatteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9DE7CE1E5CE72F0052B29F /* PhoneBatteryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBatteryTests.swift; sourceTree = "<group>"; };
@@ -173,8 +171,8 @@
 		1F781B0C1E951ED200EA590C /* PhoneBattery-Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */,
 				1F781B0F1E951ED200EA590C /* ExtensionDelegate.swift */,
+				1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */,
 				1F781B111E951ED200EA590C /* ComplicationController.swift */,
 				1F781B211E951F5400EA590C /* Resources */,
 			);
@@ -259,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */,
-				1F9DE7C21E5CE72F0052B29F /* LaunchScreen.storyboard */,
 				1F9DE7EA1E5CE7400052B29F /* PhoneBattery.entitlements */,
 				1F9DE7C51E5CE72F0052B29F /* Info.plist */,
 				1F9DE7EF1E5CE82A0052B29F /* Localizable.strings */,
@@ -481,7 +478,6 @@
 			files = (
 				1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */,
 				1F9DE7F01E5CE82A0052B29F /* Localizable.strings in Resources */,
-				1F9DE7C41E5CE72F0052B29F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,14 +590,6 @@
 				1F781AFF1E951ED200EA590C /* Base */,
 			);
 			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-		1F9DE7C21E5CE72F0052B29F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1F9DE7C31E5CE72F0052B29F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
