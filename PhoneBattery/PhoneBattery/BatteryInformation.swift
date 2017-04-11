@@ -13,7 +13,12 @@ class BatteryInformation: NSObject {
     let device = UIDevice.current
     
     var batteryState: Int {
-        return device.batteryState.rawValue
+        // Check if application is running in simulator; if so, return some state since running in simulator will always return 0
+        #if arch(i386) || arch(x86_64)
+            return 1
+        #else
+            return device.batteryState.rawValue
+        #endif
     }
     
     var batteryLevel: Int {

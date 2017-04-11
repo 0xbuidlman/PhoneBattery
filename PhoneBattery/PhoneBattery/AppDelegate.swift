@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // TODO: Activate
         //Fabric.with([Crashlytics.self])
+        
+        #if arch(i386) || arch(x86_64)
+            print("Notice: PhoneBattery is running in iOS simulator and will show wrong values since battery simulation isn't available. To see real values (such as battery level and battery state, run it on a real device.")
+        #endif
 
         let navController = UINavigationController(rootViewController: MainTableViewController(style: .grouped))
         self.window?.rootViewController = navController
