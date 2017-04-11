@@ -66,9 +66,9 @@ class PreviewWatchView: UIView {
         
         watchImageView.addConstraint(NSLayoutConstraint(item: contentView, attribute: .centerY, relatedBy: .equal, toItem: watchImageView, attribute: .centerY, multiplier: 1.0, constant: 0))
         
-        watchImageView.addConstraint(NSLayoutConstraint(item: contentView, attribute: .height, relatedBy: .equal, toItem: watchImageView, attribute: .height, multiplier: 1.0, constant: -45))
+        watchImageView.addConstraint(NSLayoutConstraint(item: contentView, attribute: .height, relatedBy: .equal, toItem: watchImageView, attribute: .height, multiplier: 1.0, constant: -50))
         
-        watchImageView.addConstraint(NSLayoutConstraint(item: contentView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 105))
+        watchImageView.addConstraint(NSLayoutConstraint(item: contentView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 120))
         
         
         let appLabel = UILabel()
@@ -92,7 +92,6 @@ class PreviewWatchView: UIView {
         contentView.addConstraint(NSLayoutConstraint(item: timeLabel, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1.0, constant: 0))
         
         contentView.addConstraint(NSLayoutConstraint(item: timeLabel, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 0))
-        
         
         
         let proxyView = UIView()
@@ -164,8 +163,8 @@ class PreviewWatchView: UIView {
     
     func refreshTime() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm"
         dateFormatter.timeStyle = .short
+        dateFormatter.dateFormat = "H:mm"
         timeLabel.text = dateFormatter.string(from: Date())
     }
     

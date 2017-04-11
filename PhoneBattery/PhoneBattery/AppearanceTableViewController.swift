@@ -30,7 +30,7 @@ class AppearanceTableViewController: UITableViewController, WCSessionDelegate {
         circularInterfaceSwitch.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
         
         
-        let headerView = PreviewWatchView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 220))
+        let headerView = PreviewWatchView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 240))
         tableView.tableHeaderView = headerView
     }
     
