@@ -15,6 +15,7 @@ class PreviewWatchView: UIView {
     
     var timer: Timer?
     let timeLabel = UILabel()
+    let appLabel = UILabel()
     fileprivate let contentView = UIView()
     fileprivate let batteryStatusLabel = UILabel()
     fileprivate let batteryImageView = UIImageView()
@@ -28,10 +29,11 @@ class PreviewWatchView: UIView {
                                                name: NSNotification.Name.UIDeviceBatteryLevelDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshBatteryInformation),
                                                name: NSNotification.Name.UIDeviceBatteryStateDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setupViewHierarchy), name: NSNotification.Name("WatchInterfaceDidChange"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupInterface), name: NSNotification.Name("WatchInterfaceDidChange"), object: nil)
         
         
-        setupViewHierarchy()
+        setupWatch()
+        setupInterface()
         
         
         timer?.fire()
@@ -46,7 +48,7 @@ class PreviewWatchView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupViewHierarchy() {
+    func setupWatch() {
         watchImageView.translatesAutoresizingMaskIntoConstraints = false
         watchImageView.contentMode = .scaleAspectFit
         addSubview(watchImageView)
@@ -71,7 +73,6 @@ class PreviewWatchView: UIView {
         watchImageView.addConstraint(NSLayoutConstraint(item: contentView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 120))
         
         
-        let appLabel = UILabel()
         appLabel.text = "PhoneBattery"
         appLabel.textColor = .phoneBatteryGreen
         appLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -94,6 +95,12 @@ class PreviewWatchView: UIView {
         contentView.addConstraint(NSLayoutConstraint(item: timeLabel, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 0))
         
         
+        
+        refreshTime()
+        refreshBatteryInformation()
+    }
+    
+    func setupInterface() {
         let proxyView = UIView()
         proxyView.translatesAutoresizingMaskIntoConstraints = false
         proxyView.backgroundColor = .black
@@ -106,7 +113,8 @@ class PreviewWatchView: UIView {
         contentView.addConstraint(NSLayoutConstraint(item: proxyView, attribute: .height, relatedBy: .equal, toItem: contentView, attribute: .height, multiplier: 1.0, constant: -10))
         
         contentView.addConstraint(NSLayoutConstraint(item: proxyView, attribute: .width, relatedBy: .equal, toItem: contentView, attribute: .width, multiplier: 1.0, constant: 0))
-  
+        
+        layoutIfNeeded()
         
         
         batteryImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -120,7 +128,8 @@ class PreviewWatchView: UIView {
         addConstraint(NSLayoutConstraint(item: batteryImageView, attribute: .width, relatedBy: .equal, toItem: proxyView, attribute: .width, multiplier: 0.9, constant: 0))
         
         
-        
+        // Remove batteryPercentageLabel due to new layout attributes
+        batteryPercentageLabel.removeFromSuperview()
         
         batteryPercentageLabel.textColor = .white
         batteryPercentageLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -157,8 +166,6 @@ class PreviewWatchView: UIView {
         }
         
         animateWatch()
-        refreshTime()
-        refreshBatteryInformation()
     }
     
     func refreshTime() {
