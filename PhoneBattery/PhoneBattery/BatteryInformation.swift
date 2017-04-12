@@ -12,6 +12,12 @@ class BatteryInformation: NSObject {
     
     let device = UIDevice.current
     
+    override init() {
+        super.init()
+        
+        device.isBatteryMonitoringEnabled = true
+    }
+    
     var batteryState: Int {
         // Check if application is running in simulator; if so, return some state since running in simulator will always return 0
         #if arch(i386) || arch(x86_64)
@@ -30,10 +36,8 @@ class BatteryInformation: NSObject {
         #endif
     }
     
-    override init() {
-        super.init()
-        
-        device.isBatteryMonitoringEnabled = true
+    var lowPowerModeEnabled: Bool {
+        return ProcessInfo.processInfo.isLowPowerModeEnabled
     }
     
     func stringForBatteryState(state: Int) -> String {

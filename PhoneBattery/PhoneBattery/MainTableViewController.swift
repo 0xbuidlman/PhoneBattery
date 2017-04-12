@@ -138,7 +138,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
-            return "By enabling, you'll occasionally receive notifications regarding your phone's battery state and battery level."
+            return "By enabling, we'll occasionally send you notifications regarding your phone's battery state and battery level."
         }
         return nil
     }
@@ -249,7 +249,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                 self.present(alert, animated: true, completion: nil)
                 
             } else if indexPath.row == 1 {
-                
+                // TODO: Add introduction
                 
                 
                 
@@ -285,7 +285,13 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         composeViewController.setToRecipients(["me@marcelvoss.com"])
         composeViewController.setSubject("PhoneBattery \(DeviceInformation.versionNumber) (\(DeviceInformation.buildNumber))")
         
-        composeViewController.setMessageBody("\n\n\n------\niOS Version: \(UIDevice.current.systemVersion)\nHardware Identifier: \(DeviceInformation.hardwareIdentifier)", isHTML: false)
+        // Convert boolean to string
+        var watchAppInstalledString = "n/a"
+        if let theSession  = session {
+             watchAppInstalledString = theSession.isWatchAppInstalled ? "Yes" : "No"
+        }
+        
+        composeViewController.setMessageBody("\n\n\n------\niOS Version: \(UIDevice.current.systemVersion)\nHardware Identifier: \(DeviceInformation.hardwareIdentifier)\nWatch App Installed: \(watchAppInstalledString)", isHTML: false)
         
         present(composeViewController, animated: true, completion: nil)
     }

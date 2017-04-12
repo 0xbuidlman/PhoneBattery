@@ -68,7 +68,6 @@ class AppearanceTableViewController: UITableViewController, WCSessionDelegate {
                 cell?.selectionStyle = .none
                 cell?.accessoryView = circularInterfaceSwitch
             }
-
         }
         
         return cell!

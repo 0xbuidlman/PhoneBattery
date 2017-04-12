@@ -23,18 +23,13 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var circularLevelLabel: WKInterfaceLabel!
     @IBOutlet var circularStatusLabel: WKInterfaceLabel!
     
+    let settings = SettingsModel()
     let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
     
     var lastBatteryLevel = 0
     
-    enum Interface {
-        case battery
-        case circular
-    }
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
         // Configure interface objects here.
         
         if WCSession.isSupported() {
