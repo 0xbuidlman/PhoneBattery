@@ -42,13 +42,13 @@ class BatteryInformation: NSObject {
     
     func stringForBatteryState(state: Int) -> String {
         if state == 1 {
-            return "Left"
+            return NSLocalizedString("BATTERY_LEFT", comment: "")
         } else if state == 2 {
-            return "Charging"
+            return NSLocalizedString("BATTERY_CHARGING", comment: "")
         } else if state == 3 {
-            return "Full"
+            return NSLocalizedString("BATTERY_FULL", comment: "")
         } else {
-            return "Unknown"
+            return NSLocalizedString("BATTERY_UNKNOWN", comment: "")
         }
     }
 }

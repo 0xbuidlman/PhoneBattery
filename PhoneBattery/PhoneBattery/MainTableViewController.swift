@@ -23,7 +23,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Welcome"
+        title = NSLocalizedString("WELCOME", comment: "")
         
         if WCSession.isSupported() {
             session?.delegate = self
@@ -118,7 +118,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     func sharePressed() {
         if let phoneBatteryAppStoreURL = URL(string: "https://itunes.apple.com/de/app/phonebattery-your-phones-battery-on-your-wrist/id1009278300?l=en&mt=8") {
             
-            let shareText = "Just discovered PhoneBattery – an amazing app for displaying your phone's battery life on your Watch."
+            let shareText = NSLocalizedString("PHONEBATTERY_SHARE", comment: "")
             
             let activityVC = UIActivityViewController(activityItems: [shareText, phoneBatteryAppStoreURL], applicationActivities: nil)
             present(activityVC, animated: true, completion: nil)
@@ -129,7 +129,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == 2 {
-            let footer = TableFooterView("Thanks for using PhoneBattery! <3")
+            let footer = TableFooterView(NSLocalizedString("THANKS", comment: ""))
             footer.textLabel.textAlignment = .center
             return footer
         }
@@ -138,18 +138,18 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
-            return "By enabling, we'll occasionally send you notifications regarding your phone's battery state and battery level."
+            return NSLocalizedString("NOTIFICATIONS_DESCRIPTION", comment: "")
         }
         return nil
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Settings"
+            return NSLocalizedString("SETTINGS", comment: "")
         } else if section == 1 {
-            return "About"
+            return NSLocalizedString("ABOUT", comment: "")
         } else if section == 2 {
-            return "More"
+            return NSLocalizedString("MORE", comment: "")
         }
         return nil
     }
@@ -159,9 +159,6 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        /*if section == 0 {
-            return 35
-        }*/
         return tableView.sectionFooterHeight
     }
 
@@ -182,29 +179,29 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.text = "Appearance"
+                cell.textLabel?.text = NSLocalizedString("APPEARANCE", comment: "")
             } else if indexPath.row == 1 {
                 cell.selectionStyle = .none
-                cell.textLabel?.text = "Battery Notifications"
+                cell.textLabel?.text = NSLocalizedString("BATTERY_NOTIFICATIONS", comment: "")
                 cell.accessoryView = notificationSwitch
             }
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
-                cell.textLabel?.text = "Help"
+                cell.textLabel?.text = NSLocalizedString("HELP", comment: "")
                 cell.accessoryType = .disclosureIndicator
             } else if indexPath.row == 1 {
-                cell.textLabel?.text = "Introduction"
+                cell.textLabel?.text = NSLocalizedString("INTRODUCTION", comment: "")
                 cell.accessoryType = .disclosureIndicator
             } else if indexPath.row == 2 {
-                cell.textLabel?.text = "Rate on the App Store"
+                cell.textLabel?.text = NSLocalizedString("RATE_APP_STORE", comment: "")
                 cell.accessoryType = .disclosureIndicator
             }
         } else if indexPath.section == 2 {
             if indexPath.row == 0 {
-                cell.textLabel?.text = "Code on GitHub"
+                cell.textLabel?.text = NSLocalizedString("GITHUB", comment: "")
                 cell.accessoryType = .disclosureIndicator
             } else if indexPath.row == 1 {
-                cell.textLabel?.text = "PhoneBattery on Twitter"
+                cell.textLabel?.text = NSLocalizedString("TWITTER", comment: "")
                 cell.accessoryType = .disclosureIndicator
             }
         }
@@ -222,7 +219,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
             if indexPath.row == 0 {
                 let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
                 
-                alert.addAction(UIAlertAction(title: "FAQ", style: .default, handler: { (action) in
+                alert.addAction(UIAlertAction(title: NSLocalizedString("FAQ", comment: ""), style: .default, handler: { (action) in
                     // TODO: Add real URL
                     if let faqURL = URL(string: "http://marcelvoss.com") {
                         let safariVC = SFSafariViewController(url: faqURL, entersReaderIfAvailable: false)
@@ -230,7 +227,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                     }
                 }))
                 
-                alert.addAction(UIAlertAction(title: "Support", style: .default, handler: { (action) in
+                alert.addAction(UIAlertAction(title: NSLocalizedString("SUPPORT", comment: ""), style: .default, handler: { (action) in
                     if MFMailComposeViewController.canSendMail() {
                         self.setupSupportViewController()
                     } else {
@@ -242,7 +239,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                     }
                 }))
                 
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: .cancel, handler: { (action) in
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 

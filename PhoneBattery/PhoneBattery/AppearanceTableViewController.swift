@@ -18,7 +18,7 @@ class AppearanceTableViewController: UITableViewController, WCSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Appearance"
+        title = NSLocalizedString("APPEARANCE", comment: "")
         
         if WCSession.isSupported() {
             session?.delegate = self
@@ -64,7 +64,7 @@ class AppearanceTableViewController: UITableViewController, WCSessionDelegate {
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell?.textLabel?.text = "Circular Indicator"
+                cell?.textLabel?.text = NSLocalizedString("CIRCULAR_INDICATOR", comment: "")
                 cell?.selectionStyle = .none
                 cell?.accessoryView = circularInterfaceSwitch
             }
