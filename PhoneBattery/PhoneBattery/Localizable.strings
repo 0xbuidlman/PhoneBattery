@@ -33,3 +33,6 @@
 "BATTERY_LEFT" = "Left";
 "BATTERY_CHARGING" = "Charging";
 "BATTERY_FULL" = "Full";
+
+// Notifications
+"NOTIFICATION_TITLE" = "Battery Status";

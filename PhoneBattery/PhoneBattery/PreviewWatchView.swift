@@ -132,15 +132,18 @@ class PreviewWatchView: UIView {
         
         batteryPercentageLabel.textColor = .white
         batteryPercentageLabel.translatesAutoresizingMaskIntoConstraints = false
-        batteryPercentageLabel.font = UIFont.systemFont(ofSize: 10)
         batteryPercentageLabel.textAlignment = .center
         batteryImageView.addSubview(batteryPercentageLabel)
         
         batteryImageView.addConstraint(NSLayoutConstraint(item: batteryPercentageLabel, attribute: .centerX, relatedBy: .equal, toItem: batteryImageView, attribute: .centerX, multiplier: 1.0, constant: 0))
         
         if settings.useCircularIndicator {
+            batteryPercentageLabel.font = UIFont.systemFont(ofSize: 15)
+            
             batteryImageView.addConstraint(NSLayoutConstraint(item: batteryPercentageLabel, attribute: .centerY, relatedBy: .equal, toItem: batteryImageView, attribute: .centerY, multiplier: 1.0, constant: -6))
         } else {
+            batteryPercentageLabel.font = UIFont.systemFont(ofSize: 10)
+            
             batteryImageView.addConstraint(NSLayoutConstraint(item: batteryPercentageLabel, attribute: .centerY, relatedBy: .equal, toItem: batteryImageView, attribute: .centerY, multiplier: 1.0, constant: 0))
         }
         
