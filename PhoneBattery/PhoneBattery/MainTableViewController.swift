@@ -221,7 +221,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                 
                 alert.addAction(UIAlertAction(title: NSLocalizedString("FAQ", comment: ""), style: .default, handler: { (action) in
                     // TODO: Add real URL
-                    if let faqURL = URL(string: "http://marcelvoss.com") {
+                    if let faqURL = URL(string: "http://marcelvoss.com/phonebattery/faq") {
                         let safariVC = SFSafariViewController(url: faqURL, entersReaderIfAvailable: false)
                         self.present(safariVC, animated: true, completion: nil)
                     }
@@ -231,8 +231,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                     if MFMailComposeViewController.canSendMail() {
                         self.setupSupportViewController()
                     } else {
-                        // TODO: Add real URL
-                        if let supportURL = URL(string: "http://marcelvoss.com") {
+                        if let supportURL = URL(string: "http://marcelvoss.com/phonebattery") {
                             let safariVC = SFSafariViewController(url: supportURL, entersReaderIfAvailable: false)
                             self.present(safariVC, animated: true, completion: nil)
                         }
@@ -267,9 +266,26 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                     self.present(safariVC, animated: true, completion: nil)
                 }
             } else if indexPath.row == 1 {
-                if let twitterURL = URL(string: "https://twitter.com/phonebatteryapp") {
-                    let safariVC = SFSafariViewController(url: twitterURL, entersReaderIfAvailable: false)
-                    self.present(safariVC, animated: true, completion: nil)
+                
+                // TODO: Fix this horrible mess
+                
+                let follow = Follow()
+                let twitterHandle = "phonebatteryapp"
+                follow.accounts { (accounts, granted, error) in
+                    
+                    if let twitterAccounts = accounts {
+                        if twitterAccounts.count == 0 {
+                            _ = follow.showProfile(username: twitterHandle)
+                        } else {
+                            if error == nil && granted,
+                                let actionSheet = follow.actionSheet(accounts: accounts, username: twitterHandle) {
+                                
+                                DispatchQueue.main.sync {
+                                    self.present(actionSheet, animated: true, completion: nil)
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

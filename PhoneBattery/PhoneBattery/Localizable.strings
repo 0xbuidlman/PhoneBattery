@@ -24,6 +24,11 @@
 "FAQ" = "FAQ";
 "SUPPORT" = "Support";
 "CANCEL" = "Cancel";
+"ERROR" = "Error";
+
+// Twitter Logic
+"CHOOSE_ACCOUNT" = "Choose an account that should follow @%@";
+"FOLLOW_ERROR" = "Couldn't follow %@. %@";
 
 "PHONEBATTERY_SHARE" = "PhoneBattery – your phone's battery, on your wrist";
 "CIRCULAR_INDICATOR" = "Circular Indicator";

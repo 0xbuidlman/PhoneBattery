@@ -11,6 +11,7 @@
 		1F29147E1E7059AC002931A7 /* UIColor+Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */; };
 		1F2914801E705D8A002931A7 /* TableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29147F1E705D8A002931A7 /* TableFooterView.swift */; };
 		1F293AEB1E984CB200447957 /* PreviewWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F293AEA1E984CB200447957 /* PreviewWatchView.swift */; };
+		1F75205D1E9F9FC50054506D /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75205C1E9F9FC50054506D /* Follow.swift */; };
 		1F781AF71E93AABB00EA590C /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781AF61E93AABB00EA590C /* DeviceInformation.swift */; };
 		1F781AF91E93B5D400EA590C /* AppearanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781AF81E93B5D400EA590C /* AppearanceTableViewController.swift */; };
 		1F781B001E951ED200EA590C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F781AFE1E951ED200EA590C /* Interface.storyboard */; };
@@ -94,6 +95,7 @@
 		1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Brand.swift"; sourceTree = "<group>"; };
 		1F29147F1E705D8A002931A7 /* TableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFooterView.swift; sourceTree = "<group>"; };
 		1F293AEA1E984CB200447957 /* PreviewWatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewWatchView.swift; sourceTree = "<group>"; };
+		1F75205C1E9F9FC50054506D /* Follow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
 		1F781AF61E93AABB00EA590C /* DeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
 		1F781AF81E93B5D400EA590C /* AppearanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceTableViewController.swift; sourceTree = "<group>"; };
 		1F781AFC1E951ED200EA590C /* PhoneBattery-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhoneBattery-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,6 +289,7 @@
 			children = (
 				1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */,
 				1F781AF61E93AABB00EA590C /* DeviceInformation.swift */,
+				1F75205C1E9F9FC50054506D /* Follow.swift */,
 				1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */,
 			);
 			name = Utilities;
@@ -530,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F75205D1E9F9FC50054506D /* Follow.swift in Sources */,
 				1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */,
 				1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */,
 				1F2914801E705D8A002931A7 /* TableFooterView.swift in Sources */,
