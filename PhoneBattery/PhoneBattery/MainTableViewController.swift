@@ -220,7 +220,6 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                 let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
                 
                 alert.addAction(UIAlertAction(title: NSLocalizedString("FAQ", comment: ""), style: .default, handler: { (action) in
-                    // TODO: Add real URL
                     if let faqURL = URL(string: "http://marcelvoss.com/phonebattery/faq") {
                         let safariVC = SFSafariViewController(url: faqURL, entersReaderIfAvailable: false)
                         self.present(safariVC, animated: true, completion: nil)
@@ -272,19 +271,17 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                 let follow = Follow()
                 let twitterHandle = "phonebatteryapp"
                 follow.accounts { (accounts, granted, error) in
-                    
                     if let twitterAccounts = accounts {
-                        if twitterAccounts.count == 0 {
-                            _ = follow.showProfile(username: twitterHandle)
-                        } else {
-                            if error == nil && granted,
-                                let actionSheet = follow.actionSheet(accounts: accounts, username: twitterHandle) {
-                                
-                                DispatchQueue.main.sync {
-                                    self.present(actionSheet, animated: true, completion: nil)
-                                }
+                        if error == nil && granted, let actionSheet = follow.actionSheet(accounts: accounts, username: twitterHandle) {
+                            
+                            DispatchQueue.main.sync {
+                                self.present(actionSheet, animated: true, completion: nil)
                             }
+                        } else if !granted || twitterAccounts.count == 0 {
+                            _ = follow.showProfile(username: twitterHandle)
                         }
+                    } else {
+                        _ = follow.showProfile(username: twitterHandle)
                     }
                 }
             }
