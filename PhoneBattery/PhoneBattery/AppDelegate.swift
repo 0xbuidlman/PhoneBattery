@@ -22,13 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         // Override point for customization after application launch.
         
-        // TODO: Activate
-        //Fabric.with([Crashlytics.self])
+        Fabric.with([Crashlytics.self])
         
         #if arch(i386) || arch(x86_64)
             print("Notice: PhoneBattery is running in iOS simulator and will show wrong values since battery simulation isn't available. To see real values (such as battery level and battery state, run it on a real device.")
         #endif
 
+        // TODO: Handle possible errors
+        _ = WatchManager.sharedInstance.setup()
+        
         let navController = UINavigationController(rootViewController: MainTableViewController(style: .grouped))
         self.window?.rootViewController = navController
         

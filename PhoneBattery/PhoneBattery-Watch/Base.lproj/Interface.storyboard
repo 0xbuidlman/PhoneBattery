@@ -13,13 +13,13 @@
             <objects>
                 <controller contentMode="scaleAspectFit" id="mYe-wk-kdf" customClass="BatteryViewController" customModule="PhoneBattery_Watch_Extension">
                     <items>
-                        <group width="0.90000000000000002" height="71" alignment="center" verticalAlignment="center" backgroundImage="BatteryFrame-50" contentMode="scaleAspectFit" layout="vertical" id="yMi-7o-uA9">
+                        <group width="0.90000000000000002" height="71" alignment="center" verticalAlignment="center" backgroundImage="BatteryFrame-0" contentMode="scaleAspectFit" layout="vertical" id="yMi-7o-uA9">
                             <items>
                                 <label alignment="center" verticalAlignment="center" text="50%" textAlignment="center" id="ivY-jz-eI5"/>
                             </items>
                         </group>
-                        <label alignment="center" verticalAlignment="center" text="Charging" id="p29-Zx-Lgd"/>
-                        <group width="1" height="147" alignment="center" verticalAlignment="center" backgroundImage="CircularFrame-50" contentMode="scaleAspectFit" layout="vertical" id="rMa-dS-gt5">
+                        <label alignment="center" verticalAlignment="center" text="Charging" numberOfLines="2" id="p29-Zx-Lgd"/>
+                        <group width="1" height="147" alignment="center" verticalAlignment="center" backgroundImage="CircularFrame-0" contentMode="scaleAspectFit" layout="vertical" id="rMa-dS-gt5">
                             <items>
                                 <label alignment="center" verticalAlignment="center" text="50%" id="aEE-Qh-He0">
                                     <fontDescription key="font" type="system" pointSize="26"/>

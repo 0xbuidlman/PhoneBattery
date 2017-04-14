@@ -9,31 +9,41 @@
 import UIKit
 import WatchConnectivity
 
-class AppearanceTableViewController: UITableViewController, WCSessionDelegate {
+class AppearanceTableViewController: UITableViewController {
     
     let circularInterfaceSwitch = UISwitch()
     let settings = SettingsModel()
-    let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = NSLocalizedString("APPEARANCE", comment: "")
         
-        if WCSession.isSupported() {
-            session?.delegate = self
-            session?.activate()
-        }
-        
         circularInterfaceSwitch.onTintColor = .phoneBatteryGreen
         circularInterfaceSwitch.setOn(settings.useCircularIndicator, animated: false)
         circularInterfaceSwitch.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
-        
         
         let headerView = PreviewWatchView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 240))
         tableView.tableHeaderView = headerView
     }
     
+    func switchValueChanged(sender: UISwitch) {
+        if sender == circularInterfaceSwitch {
+            settings.useCircularIndicator = sender.isOn
+            NotificationCenter.default.post(name: NSNotification.Name("WatchInterfaceDidChange"), object: nil)
+            
+            if let reachable = WatchManager.sharedInstance.session?.isReachable, let theSession = WatchManager.sharedInstance.session {
+                if reachable {
+                    
+                    do {
+                        try theSession.updateApplicationContext(["CircularInterfaceActive": sender.isOn])
+                    } catch {
+                        // TODO: add error handling
+                    }
+                    
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,10 +81,6 @@ class AppearanceTableViewController: UITableViewController, WCSessionDelegate {
         }
         
         return cell!
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 
 }

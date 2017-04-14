@@ -10,7 +10,7 @@ import UIKit
 
 class PreviewWatchView: UIView {
     
-    fileprivate let batteryObject = BatteryInformation()
+    fileprivate let batteryObject = WatchManager.sharedInstance.battery
     fileprivate let settings = SettingsModel()
     
     var timer: Timer?

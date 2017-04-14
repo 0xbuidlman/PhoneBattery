@@ -10,25 +10,18 @@ import UIKit
 import MessageUI
 import StoreKit
 import SafariServices
-import WatchConnectivity
 import UserNotifications
 
-class MainTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, WCSessionDelegate {
+class MainTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     let notificationSwitch = UISwitch()
     var visualEffectView: UIVisualEffectView?
     let settings = SettingsModel()
-    let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = NSLocalizedString("WELCOME", comment: "")
-        
-        if WCSession.isSupported() {
-            session?.delegate = self
-            session?.activate()
-        }
         
         navigationController?.navigationBar.tintColor = .phoneBatteryGreen
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharePressed))
@@ -297,7 +290,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
         
         // Convert boolean to string
         var watchAppInstalledString = "n/a"
-        if let theSession  = session {
+        if let theSession  = WatchManager.sharedInstance.session {
              watchAppInstalledString = theSession.isWatchAppInstalled ? "Yes" : "No"
         }
         
@@ -310,39 +303,6 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: WCSessionDelegate
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
-    
-    func session(_ session: WCSession, didReceiveMessage
-        message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-
-        
-        if let requiresUpdate = message["requiresUpdate"] as? Bool {
-            if requiresUpdate {
-                
-                let battery = BatteryInformation()
-                let applicationData = ["batteryLevel": battery.batteryLevel,
-                                       "batteryState": battery.batteryState] as [String : Any]
-                
-                replyHandler(applicationData as [String : Any])
-                
-            }
-        }
-        
-        
     }
 
 }

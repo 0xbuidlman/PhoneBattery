@@ -10,10 +10,8 @@ import UIKit
 
 import WatchKit
 import Foundation
-import WatchConnectivity
 
-
-class BatteryViewController: WKInterfaceController, WCSessionDelegate {
+class BatteryViewController: WKInterfaceController {
     
     @IBOutlet var batteryGroupItem: WKInterfaceGroup!
     @IBOutlet var batteryLevelLabel: WKInterfaceLabel!
@@ -23,28 +21,27 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var circularLevelLabel: WKInterfaceLabel!
     @IBOutlet var circularStatusLabel: WKInterfaceLabel!
     
-    let settings = SettingsModel()
-    let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
-    
     var lastBatteryLevel = 0
+    let settings = SettingsModel()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.
         
-        if WCSession.isSupported() {
-            session?.delegate = self
-            session?.activate()
-        }
+        hideAlternativeInterface()
+        
+        wantsUpdate()
     }
     
     override init() {
         super.init()
         
-        if WCSession.isSupported() {
-            session?.delegate = self
-            session?.activate()
-        }
+        hideAlternativeInterface()
+        addMenuItems()
+        
+        wantsUpdate()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(interfaceNeedsUpdate), name: NSNotification.Name("WatchInterfaceDidChange"), object: nil)
     }
     
     override func willActivate() {
@@ -52,25 +49,46 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
         super.willActivate()
         
         setTitle("PhoneBattery")
+        wantsUpdate()
+    }
+    
+    func addMenuItems() {
+        clearAllMenuItems()
         
-        self.circularGroupItem.setHidden(true)
-        //self.batteryStatusLabel.setHidden(true)
-        
-        if let reachable = session?.isReachable, let theSession = session {
+        if settings.useCircularIndicator {
+            addMenuItem(withImageNamed: "BatteryMenu", title: "Battery", action: #selector(changeInterfaceMenuItemPressed))
+        } else {
+            addMenuItem(withImageNamed: "CircularMenu", title: "Circular", action: #selector(changeInterfaceMenuItemPressed))
+        }
+    }
+    
+    func hideAlternativeInterface() {
+        if settings.useCircularIndicator {
+            self.batteryGroupItem.setHidden(true)
+            self.batteryStatusLabel.setHidden(true)
+            
+            self.circularGroupItem.setHidden(false)
+        } else {
+            self.circularGroupItem.setHidden(true)
+            
+            self.batteryGroupItem.setHidden(false)
+            self.batteryStatusLabel.setHidden(false)
+        }
+    }
+    
+    func wantsUpdate() {
+        if let reachable = WatchManager.sharedInstance.session?.isReachable, let theSession = WatchManager.sharedInstance.session {
             if reachable {
-                
-                theSession.sendMessage(["requiresUpdate": true], replyHandler: { (reply) in
+                theSession.sendMessage(["RequiresUpdate": true], replyHandler: { (reply) in
                     // handle reply from iPhone
                     
                     if let batteryLevel = reply["batteryLevel"] as? Int,  let batteryState = reply["batteryState"] as? Int{
                         
                         DispatchQueue.main.sync {
-                            
                             self.updateInterface(level: batteryLevel, state: batteryState)
                         }
                         
                     }
-                    
                 }, errorHandler: { (error) in
                     // handle errors
                     
@@ -79,7 +97,35 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
+    func changeInterfaceMenuItemPressed() {
+        lastBatteryLevel = 0
+        if settings.useCircularIndicator {
+            settings.useCircularIndicator = false
+            wantsUpdate()
+        } else {
+            settings.useCircularIndicator = true
+            wantsUpdate()
+        }
+        
+        // Send updated settings to iOS app
+        if let reachable = WatchManager.sharedInstance.session?.isReachable, let theSession = WatchManager.sharedInstance.session {
+            if reachable {
+                
+                do {
+                    try theSession.updateApplicationContext(["CircularInterfaceActive": settings.useCircularIndicator])
+                } catch {
+                    // TODO: add error handling
+                }
+                
+            }
+        }
+        
+        addMenuItems()
+    }
+    
     func updateInterface(level: Int, state: Int) {
+        hideAlternativeInterface()
+        
         circularLevelLabel.setText("\(level)%")
         batteryLevelLabel.setText("\(level)%")
         
@@ -97,16 +143,24 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
             batteryStatusLabel.setText("Full")
         }
         
+        let duration: TimeInterval = lastBatteryLevel > level ? -1 : 1
         if lastBatteryLevel != level {
-            
-            circularGroupItem.setBackgroundImageNamed("CircularFrame-")
-            self.circularGroupItem.startAnimatingWithImages(in: NSMakeRange(lastBatteryLevel, level+1), duration: 1, repeatCount: 1)
+            if settings.useCircularIndicator {
+                circularGroupItem.setBackgroundImageNamed("CircularFrame-")
+                circularGroupItem.startAnimatingWithImages(in: NSMakeRange(lastBatteryLevel, level+1), duration: duration, repeatCount: 1)
+            } else {
+                batteryGroupItem.setBackgroundImageNamed("BatteryFrame-")
+                batteryGroupItem.startAnimatingWithImages(in: NSMakeRange(lastBatteryLevel, level+1), duration: duration, repeatCount: 1)
+            }
         }
         
-        self.circularGroupItem.setHidden(true)
-        //self.batteryStatusLabel.setHidden(true)
         lastBatteryLevel = level
-        
+    }
+    
+    func interfaceNeedsUpdate() {
+        addMenuItems()
+        lastBatteryLevel = 0
+        wantsUpdate()
     }
     
     override func didDeactivate() {
@@ -114,14 +168,4 @@ class BatteryViewController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
-    
-    func session(_ session: WCSession, didReceiveMessage
-        message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        
-        
-        
-    }
 }
