@@ -18,7 +18,7 @@ class WatchManager: NSObject, WCSessionDelegate {
     let session : WCSession? = WCSession.isSupported() ? WCSession.default() : nil
     
     func setup() -> Bool {
-        // Do all inital setup required for data transfers to the Watch here
+        // Do all inital setup required for data transfers to the phone here
         
         if WCSession.isSupported() {
             session?.delegate = self

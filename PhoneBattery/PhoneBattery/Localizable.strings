@@ -41,3 +41,5 @@
 
 // Notifications
 "NOTIFICATION_TITLE" = "Battery Status";
+"NOTIFICATION_CHARGING" = " and is charging.";
+"NOTIFICATION_CHARGING_COMPLETE" = " and has completed charging.";

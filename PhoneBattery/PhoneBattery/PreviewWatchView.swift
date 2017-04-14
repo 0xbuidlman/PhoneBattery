@@ -173,7 +173,7 @@ class PreviewWatchView: UIView {
     func refreshTime() {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
-        dateFormatter.dateFormat = "H:mm"
+        dateFormatter.dateFormat = "HH:mm"
         timeLabel.text = dateFormatter.string(from: Date())
     }
     

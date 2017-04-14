@@ -258,25 +258,8 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                     self.present(safariVC, animated: true, completion: nil)
                 }
             } else if indexPath.row == 1 {
-                
-                // TODO: Fix this horrible mess
-                
                 let follow = Follow()
-                let twitterHandle = "phonebatteryapp"
-                follow.accounts { (accounts, granted, error) in
-                    if let twitterAccounts = accounts {
-                        if error == nil && granted, let actionSheet = follow.actionSheet(accounts: accounts, username: twitterHandle) {
-                            
-                            DispatchQueue.main.sync {
-                                self.present(actionSheet, animated: true, completion: nil)
-                            }
-                        } else if !granted || twitterAccounts.count == 0 {
-                            _ = follow.showProfile(username: twitterHandle)
-                        }
-                    } else {
-                        _ = follow.showProfile(username: twitterHandle)
-                    }
-                }
+                _ = follow.showProfile(username: "phonebatteryapp")
             }
         }
     }

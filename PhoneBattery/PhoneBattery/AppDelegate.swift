@@ -50,9 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             var stateString = "."
             if batteryObject.batteryState == 2 {
-                stateString = " and is charging."
+                stateString = NSLocalizedString("NOTIFICATION_CHARGING", comment: "")
             } else if batteryObject.batteryState == 3 {
-                stateString = " and has completed charging."
+                stateString = NSLocalizedString("NOTIFICATION_CHARGING_COMPLETE", comment: "")
             }
             
             let content = UNMutableNotificationContent()

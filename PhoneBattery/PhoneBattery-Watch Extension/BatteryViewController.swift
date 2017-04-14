@@ -29,7 +29,6 @@ class BatteryViewController: WKInterfaceController {
         // Configure interface objects here.
         
         hideAlternativeInterface()
-        
         wantsUpdate()
     }
     
@@ -37,8 +36,6 @@ class BatteryViewController: WKInterfaceController {
         super.init()
         
         hideAlternativeInterface()
-        addMenuItems()
-        
         wantsUpdate()
         
         NotificationCenter.default.addObserver(self, selector: #selector(interfaceNeedsUpdate), name: NSNotification.Name("WatchInterfaceDidChange"), object: nil)
@@ -52,17 +49,10 @@ class BatteryViewController: WKInterfaceController {
         wantsUpdate()
     }
     
-    func addMenuItems() {
-        clearAllMenuItems()
-        
-        if settings.useCircularIndicator {
-            addMenuItem(withImageNamed: "BatteryMenu", title: "Battery", action: #selector(changeInterfaceMenuItemPressed))
-        } else {
-            addMenuItem(withImageNamed: "CircularMenu", title: "Circular", action: #selector(changeInterfaceMenuItemPressed))
-        }
-    }
-    
     func hideAlternativeInterface() {
+        batteryLevelLabel.setText("")
+        batteryStatusLabel.setText("")
+        
         if settings.useCircularIndicator {
             self.batteryGroupItem.setHidden(true)
             self.batteryStatusLabel.setHidden(true)
@@ -95,32 +85,6 @@ class BatteryViewController: WKInterfaceController {
                 })
             }
         }
-    }
-    
-    func changeInterfaceMenuItemPressed() {
-        lastBatteryLevel = 0
-        if settings.useCircularIndicator {
-            settings.useCircularIndicator = false
-            wantsUpdate()
-        } else {
-            settings.useCircularIndicator = true
-            wantsUpdate()
-        }
-        
-        // Send updated settings to iOS app
-        if let reachable = WatchManager.sharedInstance.session?.isReachable, let theSession = WatchManager.sharedInstance.session {
-            if reachable {
-                
-                do {
-                    try theSession.updateApplicationContext(["CircularInterfaceActive": settings.useCircularIndicator])
-                } catch {
-                    // TODO: add error handling
-                }
-                
-            }
-        }
-        
-        addMenuItems()
     }
     
     func updateInterface(level: Int, state: Int) {
@@ -158,7 +122,6 @@ class BatteryViewController: WKInterfaceController {
     }
     
     func interfaceNeedsUpdate() {
-        addMenuItems()
         lastBatteryLevel = 0
         wantsUpdate()
     }
