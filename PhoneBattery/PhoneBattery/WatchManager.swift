@@ -49,9 +49,11 @@ class WatchManager: NSObject, WCSessionDelegate {
             if requiresUpdate {
                 
                 let applicationData = ["batteryLevel": battery.batteryLevel,
-                                       "batteryState": battery.batteryState] as [String : Any]
+                                       "batteryState": battery.batteryState,
+                                       "lowPowerModeActive": battery.lowPowerModeEnabled] as [String : Any]
                 
                 replyHandler(applicationData as [String : Any])
+                
             }
         }
         
