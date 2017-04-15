@@ -29,6 +29,8 @@ class PreviewWatchView: UIView {
                                                name: NSNotification.Name.UIDeviceBatteryLevelDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshBatteryInformation),
                                                name: NSNotification.Name.UIDeviceBatteryStateDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshBatteryInformation),
+                                               name: NSNotification.Name.NSProcessInfoPowerStateDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setupInterface), name: NSNotification.Name("WatchInterfaceDidChange"), object: nil)
         
         
@@ -179,8 +181,25 @@ class PreviewWatchView: UIView {
     
     func animateWatch() {
         var images = [UIImage]()
+        
         for i in 0 ... batteryObject.batteryLevel {
-            if let image = settings.useCircularIndicator ? UIImage(named: "CircularFrame-\(i)") : UIImage(named: "BatteryFrame-\(i)") {
+            var batteryImage: UIImage?
+            
+            if settings.useCircularIndicator {
+                if batteryObject.lowPowerModeEnabled {
+                    batteryImage = UIImage(named: "CircularLowPowerFrame-\(i)")
+                } else {
+                    batteryImage = UIImage(named: "CircularFrame-\(i)")
+                }
+            } else {
+                if batteryObject.lowPowerModeEnabled {
+                    batteryImage = UIImage(named: "BatteryLowPowerFrame-\(i)")
+                } else {
+                    batteryImage = UIImage(named: "BatteryFrame-\(i)")
+                }
+            }
+            
+            if let image = batteryImage {
                 images.append(image)
             }
         }
@@ -196,9 +215,18 @@ class PreviewWatchView: UIView {
         batteryPercentageLabel.text = "\(batteryObject.batteryLevel)%"
         
         if settings.useCircularIndicator {
-            batteryImageView.image = UIImage(named: "CircularFrame-\(batteryObject.batteryLevel)")
+            if batteryObject.lowPowerModeEnabled {
+                batteryImageView.image = UIImage(named: "CircularLowPowerFrame-\(batteryObject.batteryLevel)")
+            } else {
+                batteryImageView.image = UIImage(named: "CircularFrame-\(batteryObject.batteryLevel)")
+            }
         } else {
-            batteryImageView.image = UIImage(named: "BatteryFrame-\(batteryObject.batteryLevel)")
+            if batteryObject.lowPowerModeEnabled {
+                batteryImageView.image = UIImage(named: "BatteryLowPowerFrame-\(batteryObject.batteryLevel)")
+            } else {
+                batteryImageView.image = UIImage(named: "BatteryFrame-\(batteryObject.batteryLevel)")
+            }
+            
         }
         
         batteryStatusLabel.text = batteryObject.stringForBatteryState(state: batteryObject.batteryState)

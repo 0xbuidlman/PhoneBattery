@@ -258,8 +258,7 @@ class MainTableViewController: UITableViewController, MFMailComposeViewControlle
                     self.present(safariVC, animated: true, completion: nil)
                 }
             } else if indexPath.row == 1 {
-                let follow = Follow()
-                _ = follow.showProfile(username: "phonebatteryapp")
+                _ = Follow().showProfile(username: "phonebatteryapp")
             }
         }
     }

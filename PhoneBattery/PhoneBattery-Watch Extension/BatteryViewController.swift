@@ -72,10 +72,10 @@ class BatteryViewController: WKInterfaceController {
                 theSession.sendMessage(["RequiresUpdate": true], replyHandler: { (reply) in
                     // handle reply from iPhone
                     
-                    if let batteryLevel = reply["batteryLevel"] as? Int,  let batteryState = reply["batteryState"] as? Int{
+                    if let batteryLevel = reply["batteryLevel"] as? Int,  let batteryState = reply["batteryState"] as? Int, let lowPowerModeActive = reply["lowPowerModeActive"] as? Bool {
                         
                         DispatchQueue.main.sync {
-                            self.updateInterface(level: batteryLevel, state: batteryState)
+                            self.updateInterface(level: batteryLevel, state: batteryState, lowPowerModeActive: lowPowerModeActive)
                         }
                         
                     }
@@ -87,7 +87,7 @@ class BatteryViewController: WKInterfaceController {
         }
     }
     
-    func updateInterface(level: Int, state: Int) {
+    func updateInterface(level: Int, state: Int, lowPowerModeActive: Bool) {
         hideAlternativeInterface()
         
         circularLevelLabel.setText("\(level)%")
