@@ -20,7 +20,7 @@
                                 </label>
                             </items>
                         </group>
-                        <label alignment="center" verticalAlignment="center" text="Charging" numberOfLines="2" id="p29-Zx-Lgd"/>
+                        <label alignment="center" verticalAlignment="center" text="Charging" textAlignment="center" numberOfLines="2" id="p29-Zx-Lgd"/>
                         <group width="1" height="147" alignment="center" verticalAlignment="center" backgroundImage="CircularFrame-0" contentMode="scaleAspectFit" layout="vertical" id="rMa-dS-gt5">
                             <items>
                                 <label alignment="center" verticalAlignment="center" text="50%" id="aEE-Qh-He0">

@@ -151,9 +151,12 @@ class PreviewWatchView: UIView {
         }
         
         
+        batteryStatusLabel.removeFromSuperview()
+        
         batteryStatusLabel.textColor = .white
         batteryStatusLabel.translatesAutoresizingMaskIntoConstraints = false
         batteryStatusLabel.font = UIFont.systemFont(ofSize: 10)
+        batteryStatusLabel.numberOfLines = 0
         batteryStatusLabel.textAlignment = .center
         
         if settings.useCircularIndicator {
@@ -165,11 +168,14 @@ class PreviewWatchView: UIView {
         } else {
             proxyView.addSubview(batteryStatusLabel)
             
+            proxyView.addConstraint(NSLayoutConstraint(item: batteryStatusLabel, attribute: .width, relatedBy: .equal, toItem: proxyView, attribute: .width, multiplier: 1.0, constant: 0))
+            
             proxyView.addConstraint(NSLayoutConstraint(item: batteryStatusLabel, attribute: .top, relatedBy: .equal, toItem: batteryImageView, attribute: .bottom, multiplier: 1.0, constant: -3))
             
             proxyView.addConstraint(NSLayoutConstraint(item: batteryStatusLabel, attribute: .centerX, relatedBy: .equal, toItem: proxyView, attribute: .centerX, multiplier: 1.0, constant: 0))
         }
         
+        refreshBatteryInformation()
         animateWatch()
     }
     
@@ -221,6 +227,8 @@ class PreviewWatchView: UIView {
             } else {
                 batteryImageView.image = UIImage(named: "CircularFrame-\(batteryObject.batteryLevel)")
             }
+            
+            batteryStatusLabel.text = batteryObject.stringForBatteryState(state: batteryObject.batteryState, style: .short)
         } else {
             if batteryObject.lowPowerModeEnabled {
                 batteryImageView.image = UIImage(named: "BatteryLowPowerFrame-\(batteryObject.batteryLevel)")
@@ -228,9 +236,8 @@ class PreviewWatchView: UIView {
                 batteryImageView.image = UIImage(named: "BatteryFrame-\(batteryObject.batteryLevel)")
             }
             
+            batteryStatusLabel.text = batteryObject.stringForBatteryState(state: batteryObject.batteryState, style: .long)
         }
-        
-        batteryStatusLabel.text = batteryObject.stringForBatteryState(state: batteryObject.batteryState)
     }
 
 }

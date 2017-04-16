@@ -26,20 +26,22 @@
 "CANCEL" = "Cancel";
 "ERROR" = "Error";
 
-// Twitter Logic
-"CHOOSE_ACCOUNT" = "Choose an account that should follow @%@";
-"FOLLOW_ERROR" = "Couldn't follow %@. %@";
-
 "PHONEBATTERY_SHARE" = "PhoneBattery – your phone's battery, on your wrist";
 "CIRCULAR_INDICATOR" = "Circular Indicator";
 
 // Battery States
 "BATTERY_UNKNOWN" = "Unknown";
-"BATTERY_LEFT" = "Left";
-"BATTERY_CHARGING" = "Charging";
-"BATTERY_FULL" = "Full";
+
+"BATTERY_LEFT_LONG" = "Left of your phone's battery charge.";
+"BATTERY_CHARGING_LONG" = "Your phone's battery is charging.";
+"BATTERY_FULL_LONG" = "Your phone has completed charging.";
+
+"BATTERY_LEFT_SHORT" = "Left";
+"BATTERY_CHARGING_SHORT" = "Charging";
+"BATTERY_FULL_SHORT" = "Full";
 
 // Notifications
 "NOTIFICATION_TITLE" = "Battery Status";
+"NOTIFICATION_BODY" = "Your phone's battery level is at %@";
 "NOTIFICATION_CHARGING" = " and is charging.";
 "NOTIFICATION_CHARGING_COMPLETE" = " and has completed charging.";

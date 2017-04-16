@@ -23,6 +23,7 @@
 		1F781B181E951ED200EA590C /* PhoneBattery-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1F781AFC1E951ED200EA590C /* PhoneBattery-Watch.app */; };
 		1F8BAE211EA16B7A006FFD3A /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BAE201EA16B7A006FFD3A /* WatchManager.swift */; };
 		1F8BAE261EA1711F006FFD3A /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BAE251EA1711F006FFD3A /* WatchManager.swift */; };
+		1F8DAE2E1EA3F02800E3FC09 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7EF1E5CE82A0052B29F /* Localizable.strings */; };
 		1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD61E605D1500678865 /* SettingsModel.swift */; };
 		1F9DE7BF1E5CE72F0052B29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */; };
 		1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		1F9DE7F41E5CE9920052B29F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DE7F21E5CE9920052B29F /* Crashlytics.framework */; };
 		1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */; };
 		1FA62B661E97FD7300EBD84D /* BatteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */; };
+		1FA99D221EA40DFD00972E90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7EF1E5CE82A0052B29F /* Localizable.strings */; };
 		1FB80AF51E983FA70075818C /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD61E605D1500678865 /* SettingsModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -189,8 +191,8 @@
 		1F781B211E951F5400EA590C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1F781B131E951ED200EA590C /* Assets.xcassets */,
 				1F781B151E951ED200EA590C /* Info.plist */,
+				1F781B131E951ED200EA590C /* Assets.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -476,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F781B021E951ED200EA590C /* Assets.xcassets in Resources */,
+				1FA99D221EA40DFD00972E90 /* Localizable.strings in Resources */,
 				1F781B001E951ED200EA590C /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F781B141E951ED200EA590C /* Assets.xcassets in Resources */,
+				1F8DAE2E1EA3F02800E3FC09 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

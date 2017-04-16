@@ -26,6 +26,7 @@ class WatchManager: NSObject, WCSessionDelegate {
             
             return true
         }
+        
         return false
     }
     
@@ -39,6 +40,11 @@ class WatchManager: NSObject, WCSessionDelegate {
         message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
         
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        
+        NotificationCenter.default.post(name: Notification.Name("BatteryInformationUpdated"), object: nil, userInfo: message)
         
     }
     

@@ -19,6 +19,13 @@ class WatchManager: NSObject, WCSessionDelegate {
     func setup() -> Bool {
         // Do all inital setup required for data transfers to the Watch here
         
+        NotificationCenter.default.addObserver(self, selector: #selector(sendBatteryInformation),
+                                               name: NSNotification.Name.UIDeviceBatteryLevelDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sendBatteryInformation),
+                                               name: NSNotification.Name.UIDeviceBatteryStateDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sendBatteryInformation),
+                                               name: NSNotification.Name.NSProcessInfoPowerStateDidChange, object: nil)
+        
         if WCSession.isSupported() {
             session?.delegate = self
             session?.activate()
@@ -26,6 +33,27 @@ class WatchManager: NSObject, WCSessionDelegate {
             return true
         }
         return false
+    }
+    
+    func sendBatteryInformation() {
+        
+        if let reachable = session?.isReachable, let theSession = WatchManager.sharedInstance.session {
+            if reachable {
+                
+                let applicationData = ["batteryLevel": battery.batteryLevel,
+                                       "batteryState": battery.batteryState,
+                                       "lowPowerModeActive": battery.lowPowerModeEnabled] as [String : Any]
+                
+                theSession.sendMessage(applicationData, replyHandler: nil, errorHandler: { (error) in
+                    // TODO: Add error hanlding
+                    
+                    
+                })
+                
+            }
+        }
+        
+        
     }
     
     // MARK: WCSessionDelegate

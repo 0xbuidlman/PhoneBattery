@@ -12,6 +12,11 @@ class BatteryInformation: NSObject {
     
     let device = UIDevice.current
     
+    enum Style {
+        case short
+        case long
+    }
+    
     override init() {
         super.init()
         
@@ -40,13 +45,28 @@ class BatteryInformation: NSObject {
         return ProcessInfo.processInfo.isLowPowerModeEnabled
     }
     
-    func stringForBatteryState(state: Int) -> String {
+    func stringForBatteryState(state: Int, style: Style) -> String {
         if state == 1 {
-            return NSLocalizedString("BATTERY_LEFT", comment: "")
+            // Running on battery
+            if style == .short {
+                return NSLocalizedString("BATTERY_LEFT_SHORT", comment: "")
+            } else {
+                return NSLocalizedString("BATTERY_LEFT_LONG", comment: "")
+            }
         } else if state == 2 {
-            return NSLocalizedString("BATTERY_CHARGING", comment: "")
+            // Charging
+            if style == .short {
+                return NSLocalizedString("BATTERY_CHARGING_SHORT", comment: "")
+            } else {
+                return NSLocalizedString("BATTERY_CHARGING_LONG", comment: "")
+            }
         } else if state == 3 {
-            return NSLocalizedString("BATTERY_FULL", comment: "")
+            // Completed charging
+            if style == .short {
+                return NSLocalizedString("BATTERY_FULL_SHORT", comment: "")
+            } else {
+                return NSLocalizedString("BATTERY_FULL_LONG", comment: "")
+            }
         } else {
             return NSLocalizedString("BATTERY_UNKNOWN", comment: "")
         }
