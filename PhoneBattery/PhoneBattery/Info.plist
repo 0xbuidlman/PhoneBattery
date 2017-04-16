@@ -28,25 +28,19 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>90</string>
-	<key>Fabric</key>
-	<dict>
-		<key>APIKey</key>
-		<string>8728e4c3620123072c4c9f5ece9ac4063a1b6e25</string>
-		<key>Kits</key>
-		<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict/>
-				<key>KitName</key>
-				<string>Crashlytics</string>
-			</dict>
-		</array>
-	</dict>
+	<string>94</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitter</string>
+		<string>twitteriffic</string>
+		<string>tweetbot</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

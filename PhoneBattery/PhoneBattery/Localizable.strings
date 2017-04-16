@@ -5,3 +5,41 @@
   Created by Marcel Voß on 21/02/2017.
   Copyright © 2017 Marcel Voss. All rights reserved.
 */
+
+"WELCOME" = "Welcome";
+"THANKS" = "Thanks for using PhoneBattery! <3";
+"NOTIFICATIONS_DESCRIPTION" = "By enabling, we'll occasionally send you notifications regarding your phone's battery state and battery level.";
+
+"SETTINGS" = "Settings";
+"ABOUT" = "About";
+"MORE" = "More";
+
+"RATE_APP_STORE" = "Rate on the App Store";
+"INTRODUCTION" = "Introduction";
+"HELP" = "Help";
+"GITHUB" = "Code on GitHub";
+"TWITTER" = "PhoneBattery on Twitter";
+"APPEARANCE" = "Appearance";
+"BATTERY_NOTIFICATIONS" = "Battery Notifications";
+"FAQ" = "FAQ";
+"SUPPORT" = "Support";
+"CANCEL" = "Cancel";
+"ERROR" = "Error";
+
+// Twitter Logic
+"CHOOSE_ACCOUNT" = "Choose an account that should follow @%@";
+"FOLLOW_ERROR" = "Couldn't follow %@. %@";
+
+"PHONEBATTERY_SHARE" = "PhoneBattery – your phone's battery, on your wrist";
+"CIRCULAR_INDICATOR" = "Circular Indicator";
+
+// Battery States
+"BATTERY_UNKNOWN" = "Unknown";
+"BATTERY_LEFT" = "Left";
+"BATTERY_CHARGING" = "Charging";
+"BATTERY_FULL" = "Full";
+
+// Notifications
+"NOTIFICATION_TITLE" = "Battery Status";
+"NOTIFICATION_CHARGING" = " and is charging.";
+"NOTIFICATION_CHARGING_COMPLETE" = " and has completed charging.";

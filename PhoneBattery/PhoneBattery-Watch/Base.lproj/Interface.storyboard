@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mYe-wk-kdf">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--Battery View Controller-->
+        <scene sceneID="dsa-xI-IUR">
+            <objects>
+                <controller contentMode="scaleAspectFit" id="mYe-wk-kdf" customClass="BatteryViewController" customModule="PhoneBattery_Watch_Extension">
+                    <items>
+                        <group width="0.90000000000000002" height="71" alignment="center" verticalAlignment="center" backgroundImage="BatteryFrame-0" contentMode="scaleAspectFit" layout="vertical" id="yMi-7o-uA9">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="50%" textAlignment="center" id="ivY-jz-eI5">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label alignment="center" verticalAlignment="center" text="Charging" numberOfLines="2" id="p29-Zx-Lgd"/>
+                        <group width="1" height="147" alignment="center" verticalAlignment="center" backgroundImage="CircularFrame-0" contentMode="scaleAspectFit" layout="vertical" id="rMa-dS-gt5">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="50%" id="aEE-Qh-He0">
+                                    <fontDescription key="font" type="system" pointSize="26"/>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="Charging" id="vyq-fC-NTj"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="batteryGroupItem" destination="yMi-7o-uA9" id="eyL-Qi-vIT"/>
+                        <outlet property="batteryLevelLabel" destination="ivY-jz-eI5" id="2tb-b4-ALV"/>
+                        <outlet property="batteryStatusLabel" destination="p29-Zx-Lgd" id="1fu-og-O5Q"/>
+                        <outlet property="circularGroupItem" destination="rMa-dS-gt5" id="Wrf-fL-vTa"/>
+                        <outlet property="circularLevelLabel" destination="aEE-Qh-He0" id="71C-Wf-QWK"/>
+                        <outlet property="circularStatusLabel" destination="vyq-fC-NTj" id="rOd-2L-nQC"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="436" y="136.5"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.3843137254901961" green="0.83529411764705885" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+</document>

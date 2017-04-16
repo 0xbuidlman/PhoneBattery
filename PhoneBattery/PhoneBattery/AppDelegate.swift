@@ -9,21 +9,31 @@
 import UIKit
 import Fabric
 import Crashlytics
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let settings = SettingsModel()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         // Override point for customization after application launch.
         
-        //Fabric.with([Crashlytics.self])
+        
+        #if arch(i386) || arch(x86_64)
+            print("Notice: PhoneBattery is running in iOS simulator and will show wrong values since battery simulation isn't available. To see real values (such as battery level and battery state, run it on a real device.")
+        #endif
 
+        // TODO: Handle possible errors
+        _ = WatchManager.sharedInstance.setup()
+        
         let navController = UINavigationController(rootViewController: MainTableViewController(style: .grouped))
         self.window?.rootViewController = navController
+        
+        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         
         self.window!.backgroundColor = UIColor.white
         self.window!.makeKeyAndVisible()
@@ -32,7 +42,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
+        print("AppDelegate received fetch request")
         
+        if settings.useStatusNotifications {
+            let batteryObject = BatteryInformation()
+            
+            var stateString = "."
+            if batteryObject.batteryState == 2 {
+                stateString = NSLocalizedString("NOTIFICATION_CHARGING", comment: "")
+            } else if batteryObject.batteryState == 3 {
+                stateString = NSLocalizedString("NOTIFICATION_CHARGING_COMPLETE", comment: "")
+            }
+            
+            let content = UNMutableNotificationContent()
+            content.title = NSLocalizedString("NOTIFICATION_TITLE", comment: "")
+            content.body = "Your phone's battery level is at \(batteryObject.batteryLevel)%\(stateString)"
+            
+            let timeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
+            let request = UNNotificationRequest(identifier: "com.marcelvoss.PhoneBattery.NotifiationRequest", content: content, trigger: timeTrigger)
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    // Do something with error
+                    print("Error while scheduling battery notification: \(error.localizedDescription)")
+                    completionHandler(.failed)
+                } else {
+                    // Request was added successfully
+                    print("Scheduled battery notification")
+                    completionHandler(.newData)
+                }
+            }
+        }
         
     }
     
