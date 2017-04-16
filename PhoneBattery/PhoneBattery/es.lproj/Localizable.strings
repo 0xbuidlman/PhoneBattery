@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  PhoneBattery
+
+  Created by Marcel Voß on 21/02/2017.
+  Copyright © 2017 Marcel Voss. All rights reserved.
+*/
+
+"WELCOME" = "¡Bienvenido!";
+"THANKS" = "¡Gracias por usar PhoneBattery! <3";
+"NOTIFICATIONS_DESCRIPTION" = "Al activar las notificaciones, ocasionalmente te notificaremos sobre el estado y nivel de la batería de tu teléfono.";
+
+"SETTINGS" = "Ajustes";
+"ABOUT" = "Acerca de";
+"MORE" = "Más";
+
+"RATE_APP_STORE" = "Califícanos en el App Store";
+"INTRODUCTION" = "Introducción";
+"HELP" = "Ayuda";
+"GITHUB" = "Código en GitHub";
+"TWITTER" = "PhoneBattery en Twitter";
+"APPEARANCE" = "Apariencia";
+"BATTERY_NOTIFICATIONS" = "Notificaciones de Batería";
+"FAQ" = "Preguntas Frecuentes";
+"SUPPORT" = "Soporte";
+"CANCEL" = "Cancelar";
+"ERROR" = "Error";
+
+"PHONEBATTERY_SHARE" = "PhoneBattery – la batería de tu teléfono, en tu muñeca";
+"CIRCULAR_INDICATOR" = "Indicador Circular";
+
+// Battery States
+"BATTERY_UNKNOWN" = "Desconocido";
+
+"BATTERY_LEFT_LONG" = "Restante de la carga de batería de tu iPhone.";
+"BATTERY_CHARGING_LONG" = "La batería de tu iPhone se está cargando.";
+"BATTERY_FULL_LONG" = "La batería de tu iPhone se ha cargado.";
+
+"BATTERY_LEFT_SHORT" = "Restante";
+"BATTERY_CHARGING_SHORT" = "Cargando";
+"BATTERY_FULL_SHORT" = "Cargado";
+
+// Notifications
+"NOTIFICATION_TITLE" = "Estado de la Batería";
+"NOTIFICATION_BODY" = "El nivel de carga de tu iPhone es %@";
+"NOTIFICATION_CHARGING" = " y está cargando.";
+"NOTIFICATION_CHARGING_COMPLETE" = " y está completamente cargado.";

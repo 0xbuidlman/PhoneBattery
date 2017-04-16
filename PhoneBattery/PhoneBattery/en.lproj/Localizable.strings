@@ -42,6 +42,6 @@
 
 // Notifications
 "NOTIFICATION_TITLE" = "Battery Status";
-"NOTIFICATION_BODY" = "Your phone's battery level is at %@";
+"NOTIFICATION_BODY" = "Your iPhone's battery level is at %@";
 "NOTIFICATION_CHARGING" = " and is charging.";
 "NOTIFICATION_CHARGING_COMPLETE" = " and has completed charging.";

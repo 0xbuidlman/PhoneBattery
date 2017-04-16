@@ -131,6 +131,8 @@
 		1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryViewController.swift; sourceTree = "<group>"; };
 		1FA99D261EA4150900972E90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1FA99D281EA4151E00972E90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1FA99D291EA4193E00972E90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1FA99D2A1EA4265100972E90 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,6 +461,8 @@
 				en,
 				Base,
 				de,
+				fr,
+				es,
 			);
 			mainGroup = 1F9DE7B21E5CE72F0052B29F;
 			productRefGroup = 1F9DE7BC1E5CE72F0052B29F /* Products */;
@@ -605,6 +609,8 @@
 			children = (
 				1FA99D261EA4150900972E90 /* en */,
 				1FA99D281EA4151E00972E90 /* de */,
+				1FA99D291EA4193E00972E90 /* fr */,
+				1FA99D2A1EA4265100972E90 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
