@@ -23,18 +23,18 @@
 		1F781B181E951ED200EA590C /* PhoneBattery-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1F781AFC1E951ED200EA590C /* PhoneBattery-Watch.app */; };
 		1F8BAE211EA16B7A006FFD3A /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BAE201EA16B7A006FFD3A /* WatchManager.swift */; };
 		1F8BAE261EA1711F006FFD3A /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BAE251EA1711F006FFD3A /* WatchManager.swift */; };
-		1F8DAE2E1EA3F02800E3FC09 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7EF1E5CE82A0052B29F /* Localizable.strings */; };
 		1F903AD71E605D1500678865 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD61E605D1500678865 /* SettingsModel.swift */; };
 		1F9DE7BF1E5CE72F0052B29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7BE1E5CE72F0052B29F /* AppDelegate.swift */; };
 		1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */; };
 		1F9DE7CF1E5CE72F0052B29F /* PhoneBatteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7CE1E5CE72F0052B29F /* PhoneBatteryTests.swift */; };
 		1F9DE7DA1E5CE72F0052B29F /* PhoneBatteryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7D91E5CE72F0052B29F /* PhoneBatteryUITests.swift */; };
-		1F9DE7F01E5CE82A0052B29F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7EF1E5CE82A0052B29F /* Localizable.strings */; };
 		1F9DE7F31E5CE9920052B29F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DE7F11E5CE9920052B29F /* Fabric.framework */; };
 		1F9DE7F41E5CE9920052B29F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DE7F21E5CE9920052B29F /* Crashlytics.framework */; };
 		1F9DE7FB1E5CEB6D0052B29F /* BatteryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */; };
 		1FA62B661E97FD7300EBD84D /* BatteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */; };
-		1FA99D221EA40DFD00972E90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DE7EF1E5CE82A0052B29F /* Localizable.strings */; };
+		1FA99D231EA4150900972E90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FA99D271EA4150900972E90 /* Localizable.strings */; };
+		1FA99D241EA4150900972E90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FA99D271EA4150900972E90 /* Localizable.strings */; };
+		1FA99D251EA4150900972E90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FA99D271EA4150900972E90 /* Localizable.strings */; };
 		1FB80AF51E983FA70075818C /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F903AD61E605D1500678865 /* SettingsModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -125,11 +125,12 @@
 		1F9DE7D91E5CE72F0052B29F /* PhoneBatteryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBatteryUITests.swift; sourceTree = "<group>"; };
 		1F9DE7DB1E5CE72F0052B29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F9DE7EA1E5CE7400052B29F /* PhoneBattery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhoneBattery.entitlements; sourceTree = "<group>"; };
-		1F9DE7EF1E5CE82A0052B29F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1F9DE7F11E5CE9920052B29F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		1F9DE7F21E5CE9920052B29F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		1F9DE7FA1E5CEB6D0052B29F /* BatteryInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryInformation.swift; sourceTree = "<group>"; };
 		1FA62B651E97FD7300EBD84D /* BatteryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryViewController.swift; sourceTree = "<group>"; };
+		1FA99D261EA4150900972E90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1FA99D281EA4151E00972E90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,7 +277,7 @@
 				1F9DE7C01E5CE72F0052B29F /* Assets.xcassets */,
 				1F9DE7EA1E5CE7400052B29F /* PhoneBattery.entitlements */,
 				1F9DE7C51E5CE72F0052B29F /* Info.plist */,
-				1F9DE7EF1E5CE82A0052B29F /* Localizable.strings */,
+				1FA99D271EA4150900972E90 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -457,6 +458,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 1F9DE7B21E5CE72F0052B29F;
 			productRefGroup = 1F9DE7BC1E5CE72F0052B29F /* Products */;
@@ -478,7 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F781B021E951ED200EA590C /* Assets.xcassets in Resources */,
-				1FA99D221EA40DFD00972E90 /* Localizable.strings in Resources */,
+				1FA99D241EA4150900972E90 /* Localizable.strings in Resources */,
 				1F781B001E951ED200EA590C /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F781B141E951ED200EA590C /* Assets.xcassets in Resources */,
-				1F8DAE2E1EA3F02800E3FC09 /* Localizable.strings in Resources */,
+				1FA99D251EA4150900972E90 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F9DE7C11E5CE72F0052B29F /* Assets.xcassets in Resources */,
-				1F9DE7F01E5CE82A0052B29F /* Localizable.strings in Resources */,
+				1FA99D231EA4150900972E90 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +600,15 @@
 			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
+		1FA99D271EA4150900972E90 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FA99D261EA4150900972E90 /* en */,
+				1FA99D281EA4151E00972E90 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -679,6 +690,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -728,6 +740,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

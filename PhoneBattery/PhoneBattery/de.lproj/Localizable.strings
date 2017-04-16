@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  PhoneBattery
+
+  Created by Marcel Voß on 21/02/2017.
+  Copyright © 2017 Marcel Voss. All rights reserved.
+*/
+
+"WELCOME" = "Willkommen";
+"THANKS" = "Danke fürs Verwenden von PhoneBattery! <3";
+"NOTIFICATIONS_DESCRIPTION" = "Falls aktiviert, werden wir Dir von Zeit zu Zeit Benachrichtigungen über Deinen Akkustand senden.";
+
+"SETTINGS" = "Einstellungen";
+"ABOUT" = "Über";
+"MORE" = "Mehr";
+
+"RATE_APP_STORE" = "Im App Store Bewerten";
+"INTRODUCTION" = "Einführung";
+"HELP" = "Hilfe";
+"GITHUB" = "Code auf GitHub";
+"TWITTER" = "PhoneBattery auf Twitter";
+"APPEARANCE" = "Aussehen";
+"BATTERY_NOTIFICATIONS" = "Benachrichtigungen";
+"FAQ" = "FAQ";
+"SUPPORT" = "Support";
+"CANCEL" = "Abbrechen";
+"ERROR" = "Fehler";
+
+"PHONEBATTERY_SHARE" = "PhoneBattery – your phone's battery, on your wrist";
+"CIRCULAR_INDICATOR" = "Runde Anzeige";
+
+// Battery States
+"BATTERY_UNKNOWN" = "Unbekannt";
+
+"BATTERY_LEFT_LONG" = "Von der Akkuladung deines iPhones übrig.";
+"BATTERY_CHARGING_LONG" = "Dein iPhone lädt.";
+"BATTERY_FULL_LONG" = "Dein iPhone ist vollständig geladen.";
+
+"BATTERY_LEFT_SHORT" = "Übrig";
+"BATTERY_CHARGING_SHORT" = "Lädt";
+"BATTERY_FULL_SHORT" = "Voll";
+
+// Notifications
+"NOTIFICATION_TITLE" = "Ladezustand";
+"NOTIFICATION_BODY" = "Der Ladezustand deines iPhones liegt bei %@";
+"NOTIFICATION_CHARGING" = " und es lädt derzeit.";
+"NOTIFICATION_CHARGING_COMPLETE" = " und ist vollständig geladen.";

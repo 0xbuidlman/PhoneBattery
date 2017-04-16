@@ -32,9 +32,9 @@
 // Battery States
 "BATTERY_UNKNOWN" = "Unknown";
 
-"BATTERY_LEFT_LONG" = "Left of your phone's battery charge.";
-"BATTERY_CHARGING_LONG" = "Your phone's battery is charging.";
-"BATTERY_FULL_LONG" = "Your phone has completed charging.";
+"BATTERY_LEFT_LONG" = "Left of your iPhone's battery charge.";
+"BATTERY_CHARGING_LONG" = "Your iPhone's battery is charging.";
+"BATTERY_FULL_LONG" = "Your iPhone has completed charging.";
 
 "BATTERY_LEFT_SHORT" = "Left";
 "BATTERY_CHARGING_SHORT" = "Charging";
