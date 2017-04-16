@@ -29,15 +29,13 @@ class BatteryViewController: WKInterfaceController {
         // Configure interface objects here.
         
         hideAlternativeInterface()
-        wantsUpdate()
     }
     
     override init() {
         super.init()
         
         hideAlternativeInterface()
-        wantsUpdate()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(interfaceNeedsUpdate), name: NSNotification.Name("WatchInterfaceDidChange"), object: nil)
     }
     
@@ -64,7 +62,7 @@ class BatteryViewController: WKInterfaceController {
             self.batteryGroupItem.setHidden(false)
             self.batteryStatusLabel.setHidden(false)
         }
-    }
+    } 
     
     func wantsUpdate() {
         if let reachable = WatchManager.sharedInstance.session?.isReachable, let theSession = WatchManager.sharedInstance.session {
@@ -107,15 +105,32 @@ class BatteryViewController: WKInterfaceController {
             batteryStatusLabel.setText("Full")
         }
         
+        // FIXME: Animation animates wrong or showes wrong image
         let duration: TimeInterval = lastBatteryLevel > level ? -1 : 1
+        
         if lastBatteryLevel != level {
             if settings.useCircularIndicator {
-                circularGroupItem.setBackgroundImageNamed("CircularFrame-")
+                
+                if lowPowerModeActive {
+                    circularGroupItem.setBackgroundImageNamed("CircularLowPowerFrame-")
+                } else {
+                    circularGroupItem.setBackgroundImageNamed("CircularFrame-")
+                }
+                
                 circularGroupItem.startAnimatingWithImages(in: NSMakeRange(lastBatteryLevel, level+1), duration: duration, repeatCount: 1)
             } else {
-                batteryGroupItem.setBackgroundImageNamed("BatteryFrame-")
+                if lowPowerModeActive {
+                    batteryGroupItem.setBackgroundImageNamed("BatteryLowPowerFrame-")
+                } else {
+                    batteryGroupItem.setBackgroundImageNamed("BatteryFrame-")
+                }
+                
                 batteryGroupItem.startAnimatingWithImages(in: NSMakeRange(lastBatteryLevel, level+1), duration: duration, repeatCount: 1)
             }
+        } else if lowPowerModeActive {
+            // If low power mode is active, but battery level hasn't changed since the last update
+            batteryGroupItem.setBackgroundImageNamed("BatteryLowPowerFrame-\(level+1)")
+            circularGroupItem.setBackgroundImageNamed("CircularLowPowerFrame-\(level+1)")
         }
         
         lastBatteryLevel = level
