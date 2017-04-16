@@ -48,9 +48,6 @@ Thanks to [Joe Dawson](http://joedawson.me) who created PhoneBattery's gorgeous 
 <img src="Preview/phone_4.png" alt="" height="400"/>
 
 ## License
-Although, there is nothing to stop you from republishing PhoneBattery on the App Store, I would appreciate it if you wouldn't do so.
-
-PhoneBattery is available under the MIT license. See the [LICENSE](https://github.com/marcelvoss/PhoneBattery/blob/master/LICENSE.md) file for more information.
 Although, PhoneBattery's license doesn't stop you from publishing it on the App Store, I would highly appreciate it, if you wouldn't publish it on the store. Thanks! Nevertheless, according to the GPLv3 license, **you have to disclose your code**, if you do so.
 
 While PhoneBattery 1 is available under the [MIT license](https://github.com/marcelvoss/PhoneBattery/blob/2f5485bf5a3854e05e8fd1a66cb5704a609088a0/LICENSE.md), version 2 and later is available under the GNU General Public License v3.0 (GPLv3). See the [LICENSE](https://github.com/marcelvoss/PhoneBattery/blob/master/LICENSE.txt) file for more information.
