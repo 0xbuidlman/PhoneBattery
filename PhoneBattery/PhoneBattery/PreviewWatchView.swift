@@ -25,6 +25,7 @@ class PreviewWatchView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshBatteryInformation), name: NSNotification.Name("RefreshBatteryInformation"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshBatteryInformation),
                                                name: NSNotification.Name.UIDeviceBatteryLevelDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshBatteryInformation),
@@ -144,7 +145,7 @@ class PreviewWatchView: UIView {
             
             batteryImageView.addConstraint(NSLayoutConstraint(item: batteryPercentageLabel, attribute: .centerY, relatedBy: .equal, toItem: batteryImageView, attribute: .centerY, multiplier: 1.0, constant: -6))
         } else {
-            batteryPercentageLabel.font = UIFont.systemFont(ofSize: 10)
+            batteryPercentageLabel.font = UIFont.boldSystemFont(ofSize: 11)
             
             batteryImageView.addConstraint(NSLayoutConstraint(item: batteryPercentageLabel, attribute: .centerY, relatedBy: .equal, toItem: batteryImageView, attribute: .centerY, multiplier: 1.0, constant: 0))
         }

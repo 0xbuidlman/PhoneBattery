@@ -14,6 +14,12 @@ class AppearanceTableViewController: UITableViewController {
     let circularInterfaceSwitch = UISwitch()
     let settings = SettingsModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.post(name: Notification.Name("RefreshBatteryInformation"), object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

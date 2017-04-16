@@ -15,7 +15,9 @@
                     <items>
                         <group width="0.90000000000000002" height="71" alignment="center" verticalAlignment="center" backgroundImage="BatteryFrame-0" contentMode="scaleAspectFit" layout="vertical" id="yMi-7o-uA9">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="50%" textAlignment="center" id="ivY-jz-eI5"/>
+                                <label alignment="center" verticalAlignment="center" text="50%" textAlignment="center" id="ivY-jz-eI5">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
                             </items>
                         </group>
                         <label alignment="center" verticalAlignment="center" text="Charging" numberOfLines="2" id="p29-Zx-Lgd"/>
