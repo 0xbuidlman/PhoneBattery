@@ -95,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F087A171EA6BF4E00A5077B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F29147B1E705850002931A7 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		1F29147D1E7059AC002931A7 /* UIColor+Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Brand.swift"; sourceTree = "<group>"; };
 		1F29147F1E705D8A002931A7 /* TableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFooterView.swift; sourceTree = "<group>"; };
@@ -463,6 +464,7 @@
 				de,
 				fr,
 				es,
+				it,
 			);
 			mainGroup = 1F9DE7B21E5CE72F0052B29F;
 			productRefGroup = 1F9DE7BC1E5CE72F0052B29F /* Products */;
@@ -611,6 +613,7 @@
 				1FA99D281EA4151E00972E90 /* de */,
 				1FA99D291EA4193E00972E90 /* fr */,
 				1FA99D2A1EA4265100972E90 /* es */,
+				1F087A171EA6BF4E00A5077B /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
