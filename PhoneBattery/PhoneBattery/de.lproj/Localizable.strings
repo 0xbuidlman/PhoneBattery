@@ -42,6 +42,6 @@
 
 // Notifications
 "NOTIFICATION_TITLE" = "Ladezustand";
-"NOTIFICATION_BODY" = "Der Ladezustand deines iPhones liegt bei %@";
+"NOTIFICATION_BODY" = "Der Ladezustand deines iPhones liegt bei %@%@";
 "NOTIFICATION_CHARGING" = " und es lädt derzeit.";
 "NOTIFICATION_CHARGING_COMPLETE" = " und ist vollständig geladen.";

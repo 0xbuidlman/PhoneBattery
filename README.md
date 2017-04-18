@@ -15,14 +15,17 @@ PhoneBattery is also **available for free** on the [App Store](https://itunes.ap
 * battery states such as low power, charging, low battery etc.
 * no ads, no IAPs
 
-### System Requirements
+**System Requirements**
 
 * Requires iOS 10 or later
 * Requires watchOS 3 or later
 
 You can also download an old build [here](https://github.com/marcelvoss/PhoneBattery/releases/tag/1.0.2), that is compatible to iOS 8 and watchOS 1.
 
-### Localization
+**Localization**
+
+PhoneBattery is available in 7 different languages.
+
 | Language |  Localizer                                      |
 |----------|------------------------------------------------ |
 | German   | [Marcel Voss](https://github.com/marcelvoss)    |
@@ -33,9 +36,6 @@ You can also download an old build [here](https://github.com/marcelvoss/PhoneBat
 | Chinese (Traditional)  | [Jurvis Tan](https://twitter.com/jurvistan)  |
 
 Thanks to everyone!
-
-## Other Contributers
-Thanks to [Joe Dawson](http://joedawson.me) who created PhoneBattery's gorgeous icon.
 
 ## Preview
 **Apple Watch application**<br/>

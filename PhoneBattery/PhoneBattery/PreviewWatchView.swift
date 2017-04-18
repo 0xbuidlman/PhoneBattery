@@ -119,15 +119,22 @@ class PreviewWatchView: UIView {
         layoutIfNeeded()
         
         
+        
+        batteryImageView.removeFromSuperview()
         batteryImageView.translatesAutoresizingMaskIntoConstraints = false
         batteryImageView.contentMode = .scaleAspectFit
         proxyView.addSubview(batteryImageView)
         
         addConstraint(NSLayoutConstraint(item: batteryImageView, attribute: .centerX, relatedBy: .equal, toItem: proxyView, attribute: .centerX, multiplier: 1.0, constant: 0))
         
-        addConstraint(NSLayoutConstraint(item: batteryImageView, attribute: .centerY, relatedBy: .equal, toItem: proxyView, attribute: .centerY, multiplier: 1.0, constant: 0))
-        
         addConstraint(NSLayoutConstraint(item: batteryImageView, attribute: .width, relatedBy: .equal, toItem: proxyView, attribute: .width, multiplier: 0.9, constant: 0))
+        
+        if settings.useCircularIndicator {
+            addConstraint(NSLayoutConstraint(item: batteryImageView, attribute: .centerY, relatedBy: .equal, toItem: proxyView, attribute: .centerY, multiplier: 1.0, constant: 0))
+        } else {
+            addConstraint(NSLayoutConstraint(item: batteryImageView, attribute: .centerY, relatedBy: .equal, toItem: proxyView, attribute: .centerY, multiplier: 1.0, constant: -10))
+        }
+        
         
         
         // Remove batteryPercentageLabel due to new layout attributes

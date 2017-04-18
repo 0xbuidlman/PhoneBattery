@@ -56,7 +56,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let content = UNMutableNotificationContent()
             content.title = NSLocalizedString("NOTIFICATION_TITLE", comment: "")
-            content.body = "Your phone's battery level is at \(batteryObject.batteryLevel)%\(stateString)"
+            
+            
+            let bodyString = String(format: NSLocalizedString("NOTIFICATION_BODY", comment: ""), String(batteryObject.batteryLevel), stateString)
+            //let bodyString = String(format: , batteryObject.batteryLevel, stateString)
+            content.body = bodyString
             
             let timeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
             let request = UNNotificationRequest(identifier: "com.marcelvoss.PhoneBattery.NotifiationRequest", content: content, trigger: timeTrigger)
